@@ -35,4 +35,5 @@ module.exports = {
   parserOptions: {
     ecmaVersion: 'latest',
   },
+  ignorePatterns: ['postcss.config.cjs'],
 };
