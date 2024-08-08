@@ -14,7 +14,7 @@
           :to="menu.link"
           class="relative mx-2 flex items-center justify-center rounded px-6 py-3 text-lg"
           :class="{
-            'bg-gradient-to-b from-[#FAFFAF]': menu.link === current,
+            'bg-gradient-to-b from-[#FAEAB1]': menu.link === current,
           }"
           @mouseenter="menu.show = true"
           @mouseleave="menu.show = false"
@@ -35,9 +35,9 @@ import { computed, ref } from 'vue';
 import router from '@/router';
 
 const beforeClass =
-  'before:absolute before:top-0 before:left-0 before:h-3/5 before:w-3/5 before:rounded before:border-t-2 before:border-l-2 before:border-[#A0DEFF]';
+  'before:absolute before:top-0 before:left-0 before:h-3/5 before:w-3/5 before:rounded before:border-t-2 before:border-l-2 before:border-[#E5BA73]';
 const afterClass =
-  'after:absolute after:bottom-0 after:right-0 after:h-3/5 after:w-3/5 after:rounded after:border-b-2 after:border-r-2 after:border-[#3FA2F6]';
+  'after:absolute after:bottom-0 after:right-0 after:h-3/5 after:w-3/5 after:rounded after:border-b-2 after:border-r-2 after:border-[#C58940]';
 
 const menus = ref<Menu[]>([
   {
