@@ -2,7 +2,12 @@
 export default {
   content: ['./src/**/*.{js,ts,vue}'],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        dance: 'DancingScript',
+        grey: 'GreyQo',
+      },
+    },
   },
   plugins: [],
 };

@@ -1,7 +1,6 @@
 <template>
-  <div>
-    <router-view />
-  </div>
+  <nav-bar />
+  <router-view />
 </template>
 
 <script setup lang="ts"></script>
