@@ -1,11 +1,12 @@
 <template>
   <header class="sticky top-0 flex items-center justify-center">
     <nav class="flex w-[90%] items-center justify-between px-6 py-3">
-      <div class="w-[60px]">
-        <router-link to="/">
-          <img src="/wei-yuu.png" />
-        </router-link>
-      </div>
+      <router-link to="/">
+        <div class="flex w-16 flex-wrap items-center justify-center">
+          <img class="w-full" src="/wei-yuu.png" alt="wei-yuu" />
+          <span class="font-dance">W & Y</span>
+        </div>
+      </router-link>
       <div class="flex flex-1 justify-end">
         <router-link
           v-for="(menu, index) in menus"
@@ -13,7 +14,7 @@
           :to="menu.link"
           class="relative mx-2 flex items-center justify-center rounded px-6 py-3 text-lg"
           :class="{
-            'bg-gradient-to-b from-[#FFF9D0]': menu.link === current,
+            'bg-gradient-to-b from-[#FAFFAF]': menu.link === current,
           }"
           @mouseenter="menu.show = true"
           @mouseleave="menu.show = false"
@@ -36,7 +37,7 @@ import router from '@/router';
 const beforeClass =
   'before:absolute before:top-0 before:left-0 before:h-3/5 before:w-3/5 before:rounded before:border-t-2 before:border-l-2 before:border-[#A0DEFF]';
 const afterClass =
-  'after:absolute after:bottom-0 after:right-0 after:h-3/5 after:w-3/5 after:rounded after:border-b-2 after:border-r-2 after:border-[#5AB2FF]';
+  'after:absolute after:bottom-0 after:right-0 after:h-3/5 after:w-3/5 after:rounded after:border-b-2 after:border-r-2 after:border-[#3FA2F6]';
 
 const menus = ref<Menu[]>([
   {
