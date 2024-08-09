@@ -6,6 +6,7 @@ export default {
       fontFamily: {
         dance: 'DancingScript',
         grey: 'GreyQo',
+        chenYu: 'ChenYuluoyan',
       },
     },
   },
