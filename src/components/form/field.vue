@@ -8,8 +8,8 @@
       </slot>
     </span>
     <div class="flex h-[90%] w-4/5 flex-wrap items-center justify-evenly">
-      <slot name="content" :data="data">
-        <slot></slot>
+      <slot>
+        <slot name="content" :data="data"></slot>
       </slot>
     </div>
   </div>
