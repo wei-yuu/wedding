@@ -8,14 +8,14 @@
   },
   "files": [],
   "include": [
-    "vite.config.ts",
-    "cypress.config.ts",
-    "cypress/**/*.ts",
-    "src/**/*.ts",
-    "src/**/*.tsx",
-    "src/**/*.vue",
-    "src/**/*.d.ts",
-    "components.d.ts"
+    "./vite.config.ts",
+    "./cypress.config.ts",
+    "./cypress/**/*.ts",
+    "./src/**/*.ts",
+    "./src/**/*.tsx",
+    "./src/**/*.vue",
+    "./src/**/*.d.ts",
+    "./components.d.ts"
   ],
   "references": [
     {

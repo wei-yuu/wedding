@@ -2,10 +2,12 @@
 export default {
   content: ['./src/**/*.{js,ts,vue}'],
   theme: {
+    fontFamily: {
+      handwriting: [],
+    },
     extend: {
       fontFamily: {
-        dance: 'DancingScript',
-        grey: 'GreyQo',
+        cursive: ['DancingScript', 'ChenYuluoyan', 'Yozai'],
       },
     },
   },
