@@ -4,7 +4,7 @@
   >
     <span class="w-full text-center">
       <slot name="question">
-        <span class="font-chenYu text-4xl">{{ question }}</span>
+        <span class="font-cursive text-4xl">{{ question }}</span>
       </slot>
     </span>
     <div

@@ -4,15 +4,15 @@
       <router-link to="/">
         <div class="flex w-16 flex-wrap items-center justify-center">
           <img class="w-full" src="/wei-yuu.png" alt="wei-yuu" />
-          <span class="font-dance">W & Y</span>
+          <span class="font-cursive">W & Y</span>
         </div>
       </router-link>
-      <div class="flex flex-1 justify-end">
+      <div class="font-cursive flex flex-1 justify-end">
         <router-link
           v-for="(menu, index) in menus"
           :key="index"
           :to="menu.link"
-          class="relative mx-2 flex items-center justify-center rounded px-6 py-3 text-lg"
+          class="relative mx-2 flex items-center justify-center rounded px-6 py-3 text-3xl"
           :class="{
             'bg-gradient-to-b from-[#FAEAB1]': menu.link === current,
           }"
@@ -35,23 +35,23 @@ import { computed, ref } from 'vue';
 import router from '@/router';
 
 const beforeClass =
-  'before:absolute before:top-0 before:left-0 before:h-3/5 before:w-3/5 before:rounded before:border-t-2 before:border-l-2 before:border-[#E5BA73]';
+  'before:absolute before:top-0 before:left-0 before:h-full before:w-full before:rounded before:border-t-2 before:border-l-2 before:border-gray-300';
 const afterClass =
-  'after:absolute after:bottom-0 after:right-0 after:h-3/5 after:w-3/5 after:rounded after:border-b-2 after:border-r-2 after:border-[#C58940]';
+  'after:absolute after:bottom-0 after:right-0 after:h-full after:w-full after:rounded after:border-b-2 after:border-r-2 after:border-black';
 
 const menus = ref<Menu[]>([
   {
-    name: 'Our Story',
+    name: '我們的故事',
     link: '/our-story',
     show: false,
   },
   {
-    name: 'RSVP',
+    name: '婚禮表單',
     link: '/form',
     show: false,
   },
   {
-    name: 'Event Detail',
+    name: '活動詳細',
     link: '/event-detail',
     show: false,
   },
@@ -88,13 +88,13 @@ const current = computed(() => {
 .border-enter-to,
 .border-leave-from {
   &::before {
-    width: 60%;
-    height: 60%;
+    width: 100%;
+    height: 100%;
   }
 
   &::after {
-    width: 60%;
-    height: 60%;
+    width: 100%;
+    height: 100%;
   }
 }
 </style>
