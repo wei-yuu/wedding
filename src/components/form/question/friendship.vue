@@ -12,7 +12,7 @@
         />
         <label class="grid cursor-pointer gap-2" :for="option.id">
           <img class="w-72" :src="option.image" :alt="option.id" />
-          <p class="text-center font-dance text-lg">{{ option.caption }}</p>
+          <p class="font-cursive text-center text-lg">{{ option.caption }}</p>
         </label>
       </span>
     </template>
