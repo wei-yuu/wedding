@@ -1,5 +1,5 @@
 <template>
-  <form-field question="請問您是否會出席呢？">
+  <form-field question="請問您的飲食習慣？">
     <ul class="font-cursive grid gap-4 text-4xl">
       <li v-for="(option, index) in options" :key="index">
         <input
@@ -21,19 +21,14 @@ const modelValue = defineModel<string>();
 
 const options = [
   {
-    id: 'attend',
-    value: '是',
-    label: '肯定要的！我一定會出現！！🥳',
+    id: 'carnivore',
+    value: '葷',
+    label: '無肉不歡，我需要大口吃肉🍖',
   },
   {
-    id: 'gift',
-    value: '禮到人不到',
-    label: 'Sorry～禮到人不到，祝福你們🎁',
-  },
-  {
-    id: 'regret',
-    value: '否',
-    label: '抱歉，那天無法出席，恭喜你們🎉',
+    id: 'herbivore',
+    value: '素',
+    label: '養身健康，請多給我蔬菜🥬',
   },
 ];
 </script>

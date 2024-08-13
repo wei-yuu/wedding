@@ -1,6 +1,6 @@
 <template>
   <form-field question="請問是否需要幫您準備兒童座椅？">
-    <ul class="font-cursive grid w-1/2 gap-4 text-4xl">
+    <ul class="font-cursive grid gap-4 text-4xl">
       <li>
         <input
           class="mr-2 h-5 w-5"
