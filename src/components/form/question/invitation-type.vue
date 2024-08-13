@@ -19,11 +19,12 @@
           leaveFromClass="opacity-100"
           leaveToClass="opacity-0"
         >
-          <div v-show="modelValue === option.value" class="mt-3">
+          <div v-show="modelValue.value === option.value" class="mt-3">
             <label for="address">{{ option.infoLabel }}</label>
             <input
               type="text"
               class="w-full border-b-2 border-black pb-2 outline-none"
+              v-model="modelValue[option.infoLabel]"
             />
           </div>
         </transition>
@@ -33,7 +34,11 @@
 </template>
 
 <script setup lang="ts">
-const modelValue = defineModel<string>();
+const modelValue = defineModel<{
+  value: string;
+  address: string;
+  email: string;
+}>();
 
 const options = [
   {

@@ -1,5 +1,5 @@
 <template>
-  <form-field question="請問您是否會出席呢？">
+  <form-field question="是否會出席？">
     <ul class="font-cursive grid gap-4 text-4xl">
       <li v-for="(option, index) in options" :key="index">
         <input

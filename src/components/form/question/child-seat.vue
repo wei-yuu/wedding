@@ -1,5 +1,5 @@
 <template>
-  <form-field question="請問是否需要幫您準備兒童座椅？">
+  <form-field question="是否需要幫您準備兒童座椅？">
     <ul class="font-cursive grid gap-4 text-4xl">
       <li>
         <input
@@ -8,7 +8,7 @@
           name="child-seat"
           id="yes"
           value="是"
-          v-model="modelValue"
+          v-model="modelValue.value"
         />
         <label for="yes">
           <span>需要！請幫我準備</span>
@@ -16,7 +16,8 @@
             type="number"
             min="1"
             class="w-16 border-b-2 border-b-black text-center outline-none disabled:border-b-gray-400 disabled:text-gray-400"
-            :disabled="modelValue !== '是'"
+            :disabled="modelValue.value !== '是'"
+            v-model="modelValue.childSeatNumber"
           />
           <span>張</span>
         </label>
@@ -28,7 +29,7 @@
           name="child-seat"
           id="no"
           value="否"
-          v-model="modelValue"
+          v-model="modelValue.value"
         />
         <label for="no">不用麻煩～趕🦀️！</label>
       </li>
@@ -36,5 +37,8 @@
   </form-field>
 </template>
 <script setup lang="ts">
-const modelValue = defineModel<string>();
+const modelValue = defineModel<{
+  value: string;
+  childSeatNumber: number | '';
+}>();
 </script>
