@@ -5,7 +5,7 @@
         <input
           class="mr-2 h-5 w-5"
           type="radio"
-          name="attend"
+          name="eating"
           :id="option.id"
           :value="option.value"
           v-model="modelValue"
