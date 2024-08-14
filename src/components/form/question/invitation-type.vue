@@ -8,7 +8,7 @@
           name="invitation"
           :id="option.id"
           :value="option.value"
-          v-model="modelValue"
+          v-model="modelValue.value"
         />
         <label :for="option.id">{{ option.label }}</label>
         <transition
@@ -20,8 +20,9 @@
           leaveToClass="opacity-0"
         >
           <div v-show="modelValue.value === option.value" class="mt-3">
-            <label for="address">{{ option.infoLabel }}</label>
+            <label :for="option.infoLabel">{{ option.infoLabel }}</label>
             <input
+              :id="option.infoLabel"
               type="text"
               class="w-full border-b-2 border-black pb-2 outline-none"
               v-model="modelValue[option.infoLabel as keyof typeof modelValue]"
@@ -34,12 +35,13 @@
 </template>
 
 <script setup lang="ts">
-const modelValue = defineModel<{
-  value: string;
-  address: string;
-  email: string;
-}>({
+const modelValue = defineModel({
   required: true,
+  default: {
+    value: '',
+    address: '',
+    email: '',
+  },
 });
 
 const options = [

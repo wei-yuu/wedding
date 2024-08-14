@@ -20,7 +20,7 @@
 </template>
 
 <script setup lang="ts">
-const modelValue = defineModel<string>();
+const modelValue = defineModel({ required: true, default: '' });
 
 const options = [
   {

@@ -16,7 +16,7 @@
 <script setup lang="ts">
 import { ref, watch } from 'vue';
 
-const modelValue = defineModel<string>();
+const modelValue = defineModel({ required: true, default: '' });
 const message = ref<HTMLElement>();
 const textareaHeight = ref('44px');
 

@@ -37,10 +37,11 @@
   </form-field>
 </template>
 <script setup lang="ts">
-const modelValue = defineModel<{
-  value: string;
-  childSeatNumber: number | '';
-}>({
+const modelValue = defineModel({
   required: true,
+  default: {
+    value: '',
+    childSeatNumber: undefined,
+  },
 });
 </script>

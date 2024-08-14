@@ -42,7 +42,7 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue';
 
-const modelValue = defineModel<string>();
+const modelValue = defineModel({ required: true, default: '' });
 
 const options = [
   '家人/親戚',
