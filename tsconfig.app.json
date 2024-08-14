@@ -1,17 +1,6 @@
 {
   "extends": "@vue/tsconfig/tsconfig.dom.json",
-  "include": [
-    "env.d.ts",
-    "src/**/*",
-    "src/**/*.vue",
-    "components.d.ts",
-    "vite.config.ts"
-  ],
-  "exclude": ["src/**/__tests__/*"],
   "compilerOptions": {
-    "target": "esnext",
-    "module": "esnext",
-    "moduleResolution": "node",
     "strict": true,
     "importHelpers": true,
     "isolatedModules": true,
@@ -27,5 +16,13 @@
     "paths": {
       "@/*": ["./src/*"]
     }
-  }
+  },
+  "include": [
+    "env.d.ts",
+    "src/**/*",
+    "src/**/*.vue",
+    "components.d.ts",
+    "vite.config.ts"
+  ],
+  "exclude": ["node_modules", "dist", "src/**/__tests__/*"],
 }
