@@ -1,5 +1,5 @@
 <template>
-  <form-field question="您與新郎 / 新娘的關係？">
+  <form-field :question="`您與${form.friendship}的關係？`">
     <div class="relative flex w-2/3 justify-center">
       <input
         ref="input"
@@ -40,9 +40,12 @@
 </template>
 
 <script setup lang="ts">
+import { useFormStore } from '@/stores/form-store';
 import { computed, ref } from 'vue';
 
 const modelValue = defineModel({ required: true, default: '' });
+
+const { form } = useFormStore();
 
 const options = [
   '家人/親戚',

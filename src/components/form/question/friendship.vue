@@ -25,13 +25,13 @@ const modelValue = defineModel({ required: true, default: '' });
 const options = [
   {
     id: 'groom',
-    value: '男方',
+    value: '新郎',
     image: '/test.jpg',
     caption: '帥氣的 Wilson！',
   },
   {
     id: 'bride',
-    value: '女方',
+    value: '新娘',
     image: '/test.jpg',
     caption: '美麗的 Yura～',
   },
