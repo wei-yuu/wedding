@@ -57,13 +57,13 @@ const options = [
 const showOption = ref(false);
 const input = ref<HTMLElement>();
 const dropdownMargin = computed(() => {
-  return input.value?.clientHeight;
+  return input.value?.clientHeight ?? 0;
 });
 const filterOptions = computed(() => {
   if (!modelValue.value) return options;
 
   return options.filter((option) => {
-    return option.includes(modelValue.value);
+    return option.includes(modelValue.value ?? '');
   });
 });
 </script>

@@ -23,8 +23,10 @@ const textareaHeight = ref('44px');
 watch(
   () => modelValue.value,
   () => {
-    message.value.style.height = '44px';
-    textareaHeight.value = `${message.value.scrollHeight}px`;
+    if (message.value) {
+      message.value.style.height = '44px';
+      textareaHeight.value = `${message.value.scrollHeight}px`;
+    }
   },
 );
 </script>

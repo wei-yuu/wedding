@@ -47,11 +47,11 @@ const modelValue = defineModel<string>();
 const showOption = ref(false);
 const input = ref<HTMLElement>();
 const dropdownMargin = computed(() => {
-  return input.value?.clientHeight;
+  return input.value?.clientHeight ?? 0;
 });
 const number = computed({
   get: () => {
-    return parseInt(modelValue.value) || '';
+    return parseInt(modelValue.value ?? '') || '';
   },
   set: (num) => {
     modelValue.value = num.toString();

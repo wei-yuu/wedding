@@ -40,5 +40,7 @@
 const modelValue = defineModel<{
   value: string;
   childSeatNumber: number | '';
-}>();
+}>({
+  required: true,
+});
 </script>

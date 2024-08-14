@@ -24,7 +24,7 @@
             <input
               type="text"
               class="w-full border-b-2 border-black pb-2 outline-none"
-              v-model="modelValue[option.infoLabel]"
+              v-model="modelValue[option.infoLabel as keyof typeof modelValue]"
             />
           </div>
         </transition>
@@ -38,7 +38,9 @@ const modelValue = defineModel<{
   value: string;
   address: string;
   email: string;
-}>();
+}>({
+  required: true,
+});
 
 const options = [
   {
