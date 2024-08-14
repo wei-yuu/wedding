@@ -9,6 +9,11 @@ export default {
       fontFamily: {
         cursive: ['DancingScript', 'ChenYuluoyan', 'Yozai'],
       },
+      transitionDuration: {
+        900: '900ms',
+        2000: '2000ms',
+        3000: '3000ms',
+      },
     },
   },
   plugins: [],
