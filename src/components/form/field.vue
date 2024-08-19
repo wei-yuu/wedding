@@ -22,9 +22,9 @@
             'hover:bg-black hover:text-white': !disableButton,
           }"
           :disabled="disableButton"
-          @click="next"
+          @click="step === tail ? submit() : next()"
         >
-          確定
+          {{ step === tail ? '送出' : '確定' }}
         </button>
       </slot>
     </span>
@@ -40,5 +40,5 @@ defineProps<{
   disableButton?: boolean;
 }>();
 
-const { next } = useFormStore();
+const { next, submit, step, tail } = useFormStore();
 </script>

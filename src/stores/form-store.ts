@@ -1,8 +1,10 @@
+import { useSentForm } from '@/composables/form/use-sent-form';
 import type { Form } from '@/types/store/form.type';
 import { defineStore } from 'pinia';
 import { computed, readonly, ref } from 'vue';
 
 export const useFormStore = defineStore('form', () => {
+  const sentForm = useSentForm();
   const form = ref<Form>({
     name: '',
     phone: '',
@@ -57,6 +59,10 @@ export const useFormStore = defineStore('form', () => {
     }
   };
 
+  const submit = async () => {
+    await sentForm.fetch(form.value);
+  };
+
   return {
     form,
     action: readonly(action),
@@ -65,5 +71,6 @@ export const useFormStore = defineStore('form', () => {
     step: readonly(step),
     previous,
     next,
+    submit,
   };
 });
