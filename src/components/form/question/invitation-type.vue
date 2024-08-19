@@ -29,7 +29,7 @@
               :id="option.infoLabel"
               type="text"
               class="w-full border-b-2 border-black pb-2 outline-none"
-              v-model="modelValue[option.infoLabel as keyof typeof modelValue]"
+              v-model="modelValue[option.infoKey as keyof typeof modelValue]"
             />
           </div>
         </transition>
@@ -54,12 +54,14 @@ const options = [
     value: '紙本',
     label: '我喜歡紙糊的，請寄給我～📮',
     infoLabel: '地址：',
+    infoKey: 'address',
   },
   {
     id: 'email',
     value: '電子',
     label: '獨愛 0 跟 1，請 mail 給我～📧',
     infoLabel: 'E-Mail：',
+    infoKey: 'email',
   },
 ];
 </script>
