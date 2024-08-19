@@ -1,5 +1,5 @@
 <template>
-  <header class="sticky top-0 flex items-center justify-center">
+  <header class="flex items-center justify-center">
     <nav class="flex w-[90%] items-center justify-between px-6 py-3">
       <router-link to="/">
         <div class="flex w-16 flex-wrap items-center justify-center">
@@ -7,7 +7,7 @@
           <span class="font-cursive">W & Y</span>
         </div>
       </router-link>
-      <div class="font-cursive flex flex-1 justify-end">
+      <div class="flex flex-1 justify-end font-cursive">
         <router-link
           v-for="(menu, index) in menus"
           :key="index"
@@ -30,9 +30,9 @@
 </template>
 
 <script setup lang="ts">
+import router from '@/router';
 import type { Menu } from '@/types/components/nav-bar.type';
 import { computed, ref } from 'vue';
-import router from '@/router';
 
 const beforeClass =
   'before:absolute before:top-0 before:left-0 before:h-full before:w-full before:rounded before:border-t-2 before:border-l-2 before:border-gray-300';
