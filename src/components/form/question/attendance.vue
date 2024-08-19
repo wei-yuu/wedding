@@ -1,9 +1,10 @@
 <template>
-  <form-field question="當日出席的人數？">
+  <form-field question="當日出席的人數？" :disable-button="!modelValue">
     <div class="relative flex w-2/3 justify-center">
       <input
         ref="input"
-        type="text"
+        type="number"
+        min="1"
         class="font-cursive w-full border-b-2 pb-2 text-3xl outline-none focus:border-b-black"
         placeholder="請自行輸入數字，也可從下方選擇！"
         v-model.number="number"

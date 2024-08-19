@@ -1,5 +1,8 @@
 <template>
-  <form-field question="是否需要幫您準備兒童座椅？">
+  <form-field
+    question="是否需要幫您準備兒童座椅？"
+    :disable-button="!modelValue.value"
+  >
     <ul class="font-cursive grid gap-4 text-4xl">
       <li>
         <input
@@ -10,7 +13,7 @@
           value="是"
           v-model="modelValue.value"
         />
-        <label for="yes">
+        <label class="cursor-pointer" for="yes">
           <span>需要！請幫我準備</span>
           <input
             type="number"
@@ -31,7 +34,7 @@
           value="否"
           v-model="modelValue.value"
         />
-        <label for="no">不用麻煩～趕🦀️！</label>
+        <label class="cursor-pointer" for="no">不用麻煩～趕🦀️！</label>
       </li>
     </ul>
   </form-field>

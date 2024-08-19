@@ -1,5 +1,5 @@
 <template>
-  <form-field question="你是誰！？">
+  <form-field question="你是誰！？" :disable-button="!modelValue">
     <input
       v-model="modelValue"
       class="font-cursive w-2/3 border-b-2 pb-2 text-3xl outline-none focus:border-b-black"

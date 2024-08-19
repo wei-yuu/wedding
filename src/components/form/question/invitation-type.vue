@@ -1,5 +1,5 @@
 <template>
-  <form-field question="送給你的紅色💣">
+  <form-field question="送給你的紅色💣" :disable-button="!modelValue.value">
     <ul class="font-cursive grid gap-4 text-4xl">
       <li v-for="(option, index) in options" :key="index">
         <input
@@ -10,7 +10,9 @@
           :value="option.value"
           v-model="modelValue.value"
         />
-        <label :for="option.id">{{ option.label }}</label>
+        <label class="cursor-pointer" :for="option.id">
+          {{ option.label }}
+        </label>
         <transition
           enterActiveClass="transition-opacity ease duration-500"
           leaveActiveClass="transition-opacity ease duration-500"
@@ -20,7 +22,9 @@
           leaveToClass="opacity-0"
         >
           <div v-show="modelValue.value === option.value" class="mt-3">
-            <label :for="option.infoLabel">{{ option.infoLabel }}</label>
+            <label class="cursor-pointer" :for="option.infoLabel">
+              {{ option.infoLabel }}
+            </label>
             <input
               :id="option.infoLabel"
               type="text"

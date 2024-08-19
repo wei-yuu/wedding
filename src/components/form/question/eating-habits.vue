@@ -1,5 +1,5 @@
 <template>
-  <form-field question="請問您的飲食習慣？">
+  <form-field question="請問您的飲食習慣？" :disable-button="!modelValue">
     <ul class="font-cursive grid gap-4 text-4xl">
       <li v-for="(option, index) in options" :key="index">
         <input
@@ -10,7 +10,9 @@
           :value="option.value"
           v-model="modelValue"
         />
-        <label :for="option.id">{{ option.label }}</label>
+        <label class="cursor-pointer" :for="option.id">
+          {{ option.label }}
+        </label>
       </li>
     </ul>
   </form-field>
@@ -23,12 +25,12 @@ const options = [
   {
     id: 'carnivore',
     value: '葷',
-    label: '無肉不歡，我需要大口吃肉🍖',
+    label: '無肉不歡，我需要大口吃肉🍖(葷食)',
   },
   {
     id: 'herbivore',
     value: '素',
-    label: '養身健康，請多給我蔬菜🥬',
+    label: '養身健康，請多給我蔬菜🥬(素食)',
   },
 ];
 </script>

@@ -1,5 +1,5 @@
 <template>
-  <form-field question="還有想說的話">
+  <form-field question="還有想說的話" :disable-button="!modelValue">
     <textarea
       ref="message"
       class="font-cursive w-2/3 resize-none overflow-hidden whitespace-pre-wrap border-2 border-x-transparent border-t-transparent pb-2 text-3xl shadow-none outline-none focus:border-b-black"

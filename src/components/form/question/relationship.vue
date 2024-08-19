@@ -1,11 +1,14 @@
 <template>
-  <form-field :question="`您與${form.friendship}的關係？`">
+  <form-field
+    :question="`您與${form.friendship}的關係？`"
+    :disable-button="!modelValue"
+  >
     <div class="relative flex w-2/3 justify-center">
       <input
         ref="input"
         type="text"
         class="font-cursive w-full border-b-2 pb-2 text-3xl outline-none focus:border-b-black"
-        placeholder=""
+        placeholder="有些關係不可以說得太明白🤫"
         v-model="modelValue"
         @focus="showOption = true"
         @blur="showOption = false"
@@ -40,12 +43,13 @@
 </template>
 
 <script setup lang="ts">
-import { useFormStore } from '@/stores/form-store';
+import type { Form } from '@/types/store/form.type';
 import { computed, ref } from 'vue';
 
 const modelValue = defineModel({ required: true, default: '' });
-
-const { form } = useFormStore();
+defineProps<{
+  form: Form;
+}>();
 
 const options = [
   '家人/親戚',
