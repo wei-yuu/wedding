@@ -3,25 +3,30 @@
 @tailwind utilities;
 
 @font-face {
-  font-family: "DancingScript";
-  src: url("/DancingScript.ttf");
+  font-family: 'DancingScript';
+  src: url('/DancingScript.ttf');
 }
 
 @font-face {
-  font-family: "ChenYuluoyan";
-  src: url("/ChenYuluoyan-Thin.ttf");
+  font-family: 'ChenYuluoyan';
+  src: url('/ChenYuluoyan-Thin.ttf');
 }
 
 @font-face {
-  font-family: "Yozai";
-  src: url("/Yozai.ttf");
+  font-family: 'Yozai';
+  src: url('/Yozai.ttf');
 }
 
-html, body {
+html,
+body {
+  @apply bg-parchment font-cursive;
   // font-family: 'Noto Sans TC', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   height: 100%;
   margin: 0;
   overflow: auto;
+  &::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 #app {
