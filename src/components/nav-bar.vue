@@ -1,5 +1,5 @@
 <template>
-  <header class="flex items-center justify-center">
+  <header class="sticky top-0 flex items-center justify-center">
     <nav class="flex w-[90%] items-center justify-between px-6 py-3">
       <router-link to="/">
         <div class="flex w-16 flex-wrap items-center justify-center">

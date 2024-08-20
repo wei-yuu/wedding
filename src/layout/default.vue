@@ -1,6 +1,6 @@
 <template>
   <nav-bar />
-  <div class="h-full overflow-y-auto overflow-x-hidden">
+  <div class="h-full">
     <router-view />
   </div>
 </template>
