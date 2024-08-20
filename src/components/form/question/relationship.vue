@@ -7,7 +7,7 @@
       <input
         ref="input"
         type="text"
-        class="font-cursive w-full border-b-2 pb-2 text-3xl outline-none focus:border-b-black"
+        class="w-full border-b-2 pb-2 font-cursive text-3xl outline-none focus:border-b-black"
         placeholder="有些關係不可以說得太明白🤫"
         v-model="modelValue"
         @focus="showOption = true"
@@ -52,7 +52,7 @@ defineProps<{
 }>();
 
 const options = [
-  '家人/親戚',
+  '親戚/家人',
   '國小同學',
   '國中同學',
   '高中同窗',
