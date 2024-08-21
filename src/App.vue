@@ -1,5 +1,5 @@
 <template>
-  <main class="bg-parchment flex h-full flex-col">
+  <main class="flex flex-col">
     <router-view />
   </main>
 </template>
