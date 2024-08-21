@@ -3,6 +3,10 @@ export default {
   content: ['./src/**/*.{js,ts,vue}'],
   theme: {
     extend: {
+      backgroundImage: {
+        marble: 'url("/marble.jpg")',
+        parchment: 'url("/parchment.jpg")',
+      },
       fontFamily: {
         cursive: ['DancingScript', 'ChenYuluoyan', 'Yozai'],
         icon: 'Material Icons',

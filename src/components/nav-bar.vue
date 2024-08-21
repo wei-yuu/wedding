@@ -7,7 +7,7 @@
           <span class="font-cursive">W & Y</span>
         </div>
       </router-link>
-      <div class="font-cursive flex flex-1 justify-end">
+      <div class="flex flex-1 justify-end font-cursive">
         <router-link
           v-for="(menu, index) in menus"
           :key="index"
@@ -30,9 +30,9 @@
 </template>
 
 <script setup lang="ts">
+import router from '@/router';
 import type { Menu } from '@/types/components/nav-bar.type';
 import { computed, ref } from 'vue';
-import router from '@/router';
 
 const beforeClass =
   'before:absolute before:top-0 before:left-0 before:h-full before:w-full before:rounded before:border-t-2 before:border-l-2 before:border-gray-300';
