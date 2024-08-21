@@ -2,9 +2,6 @@
 export default {
   content: ['./src/**/*.{js,ts,vue}'],
   theme: {
-    fontFamily: {
-      handwriting: [],
-    },
     extend: {
       backgroundImage: {
         marble: 'url("/marble.jpg")',
@@ -13,6 +10,12 @@ export default {
       },
       fontFamily: {
         cursive: ['DancingScript', 'ChenYuluoyan', 'Yozai'],
+        icon: 'Material Icons',
+      },
+      transitionDuration: {
+        900: '900ms',
+        2000: '2000ms',
+        3000: '3000ms',
       },
     },
   },
