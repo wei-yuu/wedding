@@ -1,8 +1,6 @@
 <template>
   <nav-bar />
-  <div class="h-full">
-    <router-view />
-  </div>
+  <router-view />
 </template>
 
 <script setup lang="ts"></script>

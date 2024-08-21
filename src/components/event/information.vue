@@ -1,11 +1,9 @@
 <template>
-  <div
-    class="bg-border grid h-3/5 w-2/3 grid-cols-5 gap-2 rounded-lg bg-white/50 bg-top bg-no-repeat p-4 pt-12"
-  >
-    <section class="col-span-2 flex flex-wrap items-center justify-center">
-      <img class="w-4/5" src="/wei-yuu.png" alt="wei-yuu" />
-    </section>
+  <event-card>
     <section class="col-span-3 flex flex-wrap items-center justify-center">
+      <img class="w-64" src="/wei-yuu.png" alt="wei-yuu" />
+    </section>
+    <section class="col-span-2 flex flex-wrap items-center justify-center">
       <h2 class="w-full text-center text-4xl">Information</h2>
       <div class="whitespace-pre text-xl">
         <div
@@ -18,7 +16,7 @@
         </div>
       </div>
     </section>
-  </div>
+  </event-card>
 </template>
 
 <script setup lang="ts">
