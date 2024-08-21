@@ -9,6 +9,7 @@ export default {
       backgroundImage: {
         marble: 'url("/marble.jpg")',
         parchment: 'url("/parchment.jpg")',
+        border: 'url(/border.png)',
       },
       fontFamily: {
         cursive: ['DancingScript', 'ChenYuluoyan', 'Yozai'],
