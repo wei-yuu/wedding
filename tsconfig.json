@@ -20,13 +20,11 @@
     }
   },
   "include": [
-    "vite.config.ts",
     "env.d.ts",
     "src/**/*",
     "src/**/*.vue",
     "cypress/support/component.*",
-    "cypress/support/commands.ts",
-    "components.d.ts",
+    "cypress/support/commands.ts"
   ],
   "exclude": ["node_modules", "dist", "src/**/__tests__/*"],
   "references": [
