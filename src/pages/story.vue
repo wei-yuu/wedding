@@ -1,15 +1,29 @@
 <template>
-  <div class="about">
-    <h1>This is an about page</h1>
-  </div>
+  <ui-timeline align="center">
+    <ui-timeline-item
+      v-for="(story, index) in stories"
+      :key="index"
+      :index="index"
+      :year="story.year"
+      :month="story.month"
+      :title="story.title"
+      :content="story.content"
+      :photo="story.photo"
+    />
+  </ui-timeline>
 </template>
 
-<style>
-@media (min-width: 1024px) {
-  .about {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-  }
-}
-</style>
+<script setup lang="ts">
+import json from '@/../public/our-story.json';
+import { ref } from 'vue';
+
+const stories = ref<
+  Array<{
+    year: string;
+    month: string;
+    title: string;
+    content: string;
+    photo?: string;
+  }>
+>(json);
+</script>
