@@ -5,7 +5,7 @@
         ref="input"
         type="number"
         min="1"
-        class="font-cursive w-full border-b-2 pb-2 text-3xl outline-none focus:border-b-black"
+        class="w-full"
         placeholder="請自行輸入數字，也可從下方選擇！"
         v-model.number="number"
         @focus="showOption = true"

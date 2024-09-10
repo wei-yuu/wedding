@@ -28,7 +28,7 @@
             <input
               :id="option.infoLabel"
               type="text"
-              class="w-full border-b-2 border-black pb-2 outline-none"
+              class="w-full"
               v-model="modelValue[option.infoKey as keyof typeof modelValue]"
             />
           </div>

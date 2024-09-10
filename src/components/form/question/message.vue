@@ -2,7 +2,7 @@
   <form-field question="還有想說的話" :disable-button="!modelValue">
     <textarea
       ref="message"
-      class="font-cursive w-2/3 resize-none overflow-hidden whitespace-pre-wrap border-2 border-x-transparent border-t-transparent pb-2 text-3xl shadow-none outline-none focus:border-b-black"
+      class="w-2/3 resize-none overflow-hidden whitespace-pre-wrap border-x-transparent border-t-transparent shadow-none"
       placeholder="偷偷跟我們說"
       :style="{
         height: textareaHeight,
