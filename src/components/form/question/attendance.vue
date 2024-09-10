@@ -1,41 +1,21 @@
 <template>
   <form-field question="當日出席的人數？" :disable-button="!modelValue">
     <div class="relative flex w-2/3 justify-center">
-      <input
-        ref="input"
-        type="number"
-        min="1"
-        class="w-full"
-        placeholder="請自行輸入數字，也可從下方選擇！"
-        v-model.number="number"
-        @focus="showOption = true"
-        @blur="showOption = false"
-      />
-      <transition
-        enterActiveClass="transition-opacity ease duration-500"
-        leaveActiveClass="transition-opacity ease duration-500"
-        enterFromClass="opacity-0"
-        enterToClass="opacity-100"
-        leaveFromClass="opacity-100"
-        leaveToClass="opacity-0"
+      <ui-dropdown
+        v-model="showOption"
+        :options="[1, 2, 3, 4, 5]"
+        @click="number = $event"
       >
-        <div
-          v-show="showOption"
-          :style="{
-            'margin-top': `${dropdownMargin + 12}px`,
-          }"
-          class="absolute mt-16 grid max-h-60 w-full gap-2 overflow-auto"
-        >
-          <span
-            class="w-full cursor-pointer rounded-lg border-2 bg-gray-200 p-2"
-            v-for="(option, index) in 5"
-            :key="index"
-            @click="number = option"
-          >
-            {{ option }}
-          </span>
-        </div>
-      </transition>
+        <input
+          type="number"
+          min="1"
+          class="w-full"
+          placeholder="請自行輸入數字，也可從下方選擇！"
+          v-model.number="number"
+          @focus="showOption = true"
+          @blur="showOption = false"
+        />
+      </ui-dropdown>
     </div>
   </form-field>
 </template>
@@ -46,10 +26,7 @@ import { computed, ref } from 'vue';
 const modelValue = defineModel({ required: true, default: '' });
 
 const showOption = ref(false);
-const input = ref<HTMLElement>();
-const dropdownMargin = computed(() => {
-  return input.value?.clientHeight ?? 0;
-});
+
 const number = computed({
   get: () => {
     return parseInt(modelValue.value ?? '') || '';

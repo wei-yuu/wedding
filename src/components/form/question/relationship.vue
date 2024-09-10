@@ -4,40 +4,20 @@
     :disable-button="!modelValue"
   >
     <div class="relative flex w-2/3 justify-center">
-      <input
-        ref="input"
-        type="text"
-        class="w-full"
-        placeholder="有些關係不可以說得太明白🤫"
-        v-model="modelValue"
-        @focus="showOption = true"
-        @blur="showOption = false"
-      />
-      <transition
-        enterActiveClass="transition-opacity ease duration-500"
-        leaveActiveClass="transition-opacity ease duration-500"
-        enterFromClass="opacity-0"
-        enterToClass="opacity-100"
-        leaveFromClass="opacity-100"
-        leaveToClass="opacity-0"
+      <ui-dropdown
+        v-model="showOption"
+        :options="filterOptions"
+        @click="modelValue = $event"
       >
-        <div
-          v-show="showOption"
-          :style="{
-            'margin-top': `${dropdownMargin + 12}px`,
-          }"
-          class="absolute mt-16 grid max-h-60 w-full gap-2 overflow-auto"
-        >
-          <span
-            class="w-full cursor-pointer rounded-lg border-2 bg-gray-200 p-2"
-            v-for="(option, index) in filterOptions"
-            :key="index"
-            @click="modelValue = option"
-          >
-            {{ option }}
-          </span>
-        </div>
-      </transition>
+        <input
+          type="text"
+          class="w-full"
+          placeholder="有些關係不可以說得太明白🤫"
+          v-model="modelValue"
+          @focus="showOption = true"
+          @blur="showOption = false"
+        />
+      </ui-dropdown>
     </div>
   </form-field>
 </template>
@@ -62,10 +42,7 @@ const options = [
 ];
 
 const showOption = ref(false);
-const input = ref<HTMLElement>();
-const dropdownMargin = computed(() => {
-  return input.value?.clientHeight ?? 0;
-});
+
 const filterOptions = computed(() => {
   if (!modelValue.value) return options;
 
