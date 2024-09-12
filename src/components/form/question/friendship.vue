@@ -19,7 +19,14 @@
             :src="option.image"
             :alt="option.id"
           />
-          <p class="font-cursive text-center text-2xl">{{ option.caption }}</p>
+          <p
+            class="relative font-cursive text-center text-2xl rounded p-4"
+            :class="{
+              'active-line': modelValue === option.value,
+            }"
+          >
+            {{ option.caption }}
+          </p>
         </label>
       </span>
     </template>
@@ -44,3 +51,10 @@ const options = [
   },
 ];
 </script>
+
+<style lang="scss" scoped>
+.active-line {
+  @apply before:absolute before:border-2 before:border-gray-300 before:top-0 before:left-0 before:bottom-0 before:right-0 before:animate-around;
+  @apply after:absolute after:border-2 after:border-gray-300 after:top-0 after:left-0 after:bottom-0 after:right-0 after:animate-around-delay;
+}
+</style>
