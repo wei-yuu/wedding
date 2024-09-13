@@ -1,5 +1,5 @@
 <template>
-  <form-field question="送給你的紅色💣" :disable-button="!modelValue.value">
+  <form-field question="送給你的紅色💣" :disable-button="!activeButton">
     <ul class="font-cursive grid gap-4 text-4xl">
       <li v-for="(option, index) in options" :key="index">
         <input
@@ -39,6 +39,8 @@
 </template>
 
 <script setup lang="ts">
+import { computed } from 'vue';
+
 const modelValue = defineModel({
   required: true,
   default: {
@@ -64,4 +66,9 @@ const options = [
     infoKey: 'email',
   },
 ];
+
+const activeButton = computed(() => {
+  const invitation = modelValue.value;
+  return invitation.value && (invitation.address || invitation.email);
+});
 </script>
