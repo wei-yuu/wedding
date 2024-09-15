@@ -1,14 +1,5 @@
 <template>
   <div class="flex items-center justify-evenly">
-    <button
-      class="z-10 font-icon text-5xl"
-      :class="{
-        invisible: store.step === 0,
-      }"
-      @click="store.previous"
-    >
-      chevron_left
-    </button>
     <transition
       mode="out-in"
       enterActiveClass="transition-all ease duration-500"
@@ -22,16 +13,6 @@
         :form="store.form"
       />
     </transition>
-    <button
-      class="z-10 font-icon text-5xl"
-      :class="{
-        'pointer-events-none text-gray-300': !form[store.current],
-        invisible: store.step === store.tail,
-      }"
-      @click="store.next"
-    >
-      chevron_right
-    </button>
   </div>
 </template>
 
