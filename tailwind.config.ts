@@ -21,7 +21,7 @@ export default {
         border: 'url(/border.png)',
       },
       fontFamily: {
-        cursive: ['DancingScript', 'ChenYuluoyan', 'Yozai'],
+        cursive: ['ChenYuluoyan', 'DancingScript', 'Yozai'],
         icon: 'Material Icons',
       },
       transitionDuration: {
