@@ -2,7 +2,7 @@
   <form-field question="你的電話？" :disable-button="!modelValue">
     <input
       v-model="modelValue"
-      class="font-cursive w-2/3 border-b-2 pb-2 text-3xl outline-none focus:border-b-black"
+      class="w-2/3"
       type="text"
       placeholder="請留下您的電話～"
     />

@@ -8,11 +8,30 @@
       </slot>
     </span>
     <div
-      class="flex gap-2 max-h-[90%] w-4/5 flex-wrap items-center justify-evenly py-8"
+      class="flex gap-2 max-h-[90%] w-full flex-wrap items-center justify-evenly py-8"
     >
+      <button
+        class="z-10 font-icon text-5xl"
+        :class="{
+          invisible: step === 0,
+        }"
+        @click="previous"
+      >
+        chevron_left
+      </button>
       <slot>
         <slot name="content" :data="data"></slot>
       </slot>
+      <button
+        class="z-10 font-icon text-5xl"
+        :class="{
+          'pointer-events-none text-gray-300': disableButton,
+          invisible: step === tail,
+        }"
+        @click="next"
+      >
+        chevron_right
+      </button>
     </div>
     <span class="w-full text-center">
       <slot name="button">
@@ -40,5 +59,5 @@ defineProps<{
   disableButton?: boolean;
 }>();
 
-const { next, submit, step, tail } = useFormStore();
+const { previous, next, submit, step, tail } = useFormStore();
 </script>

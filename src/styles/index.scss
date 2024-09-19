@@ -16,6 +16,12 @@ body {
   }
 }
 
+input[type='text'],
+input[type='number'],
+textarea {
+  @apply bg-transparent font-cursive border-b-2 pb-2 text-3xl outline-none focus:border-b-black border-b-gray-400;
+}
+
 #app {
   height: 100%;
 }

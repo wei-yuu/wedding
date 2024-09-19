@@ -18,7 +18,7 @@
           <input
             type="number"
             min="1"
-            class="w-16 border-b-2 border-b-black text-center outline-none disabled:border-b-gray-400 disabled:text-gray-400"
+            class="w-16 text-center disabled:border-b-gray-400 disabled:text-gray-400"
             :disabled="modelValue.value !== '是'"
             v-model="modelValue.childSeatNumber"
           />
