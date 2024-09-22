@@ -8,7 +8,7 @@
       }"
     >
       <slot name="opposite">
-        <span>{{ year }} 年 {{ month }} 月</span>
+        <span class="text-2xl">{{ year }} 年 {{ month }} 月</span>
       </slot>
     </div>
     <!-- Divider -->
