@@ -7,7 +7,7 @@ export default async ({
   sheetId: string;
   range: string;
 }): Promise<Array<string[]>> => {
-  const apiKey = 'AIzaSyC6stZelR9O_ukD1xE4cXF52KLmvOB626g';
+  const apiKey = 'AIzaSyBOC04rDSCD3hJpld3mEpsCfhkupmzITeU';
 
   return await api
     .get<{
