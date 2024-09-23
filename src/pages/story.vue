@@ -14,16 +14,12 @@
 </template>
 
 <script setup lang="ts">
-import json from '@/../public/our-story.json';
-import { ref } from 'vue';
+import { useGetSheet } from '@/composables/story/use-get-stories';
+import { onMounted } from 'vue';
 
-const stories = ref<
-  Array<{
-    year: string;
-    month: string;
-    title: string;
-    content: string;
-    photo?: string;
-  }>
->(json);
+const { data: stories, fetch } = useGetSheet();
+
+onMounted(async () => {
+  await fetch();
+});
 </script>

@@ -22,7 +22,7 @@ instance.interceptors.request.use((request: InternalAxiosRequestConfig) => {
 
 instance.interceptors.response.use(
   async (response: AxiosResponse<{ code: string }>) => {
-    if (response.data.code !== '200')
+    if (response.status !== 200)
       return await Promise.reject(new Error('發生錯誤，請洽管理員'));
     return response;
   },

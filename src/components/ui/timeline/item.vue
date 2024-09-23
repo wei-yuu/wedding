@@ -61,7 +61,7 @@ defineProps<{
   index: number;
   year: string;
   month: string;
-  content: string;
+  content?: string;
   title: string;
   photo?: string;
 }>();
