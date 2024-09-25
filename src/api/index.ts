@@ -13,7 +13,7 @@ interface ResponseData {
 }
 
 const instance = axios.create({
-  baseURL: import.meta.env.GOOGLE_API ?? 'https://docs.google.com',
+  baseURL: import.meta.env.VITE_GOOGLE_API ?? 'https://docs.google.com',
 });
 
 instance.interceptors.request.use((request: InternalAxiosRequestConfig) => {
@@ -35,3 +35,5 @@ instance.interceptors.response.use(
 );
 
 export default instance;
+
+export const apiKey = import.meta.env.VITE_API_KEY;

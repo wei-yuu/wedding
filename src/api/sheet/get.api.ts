@@ -1,4 +1,4 @@
-import api from '..';
+import api, { apiKey } from '..';
 
 export default async ({
   sheetId,
@@ -7,15 +7,13 @@ export default async ({
   sheetId: string;
   range: string;
 }): Promise<Array<string[]>> => {
-  const apiKey = 'AIzaSyBOC04rDSCD3hJpld3mEpsCfhkupmzITeU';
-
   return await api
     .get<{
       majorDimension: 'ROWS' | 'COLUMNS';
       range: string;
       values: Array<string[]>;
     }>(
-      `https://sheets.googleapis.com/v4/spreadsheets/${sheetId}/values/${range}?key=${apiKey}`,
+      `https://sheets.googleapis.com/v4/spreadsheets/${sheetId}/values/${range}`,
       {
         params: {
           key: apiKey,
