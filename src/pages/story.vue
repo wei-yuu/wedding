@@ -1,25 +1,11 @@
 <template>
-  <ui-timeline align="center">
-    <ui-timeline-item
-      v-for="(story, index) in stories"
-      :key="index"
-      :index="index"
-      :year="story.year"
-      :month="story.month"
-      :title="story.title"
-      :content="story.content"
-      :photo="story.photo"
-    />
-  </ui-timeline>
+  <story-timeline :stories="stories" />
 </template>
 
 <script setup lang="ts">
-import { useGetSheet } from '@/composables/story/use-get-stories';
-import { onMounted } from 'vue';
+import { useStoryStore } from '@/stores/story-store';
 
-const { data: stories, fetch } = useGetSheet();
+const { stories, loadStories } = useStoryStore();
 
-onMounted(async () => {
-  await fetch();
-});
+if (!stories.length) loadStories();
 </script>

@@ -16,7 +16,7 @@ export const useStoryStore = defineStore('story', () => {
     const storyList = await getStories.fetch();
 
     storyList.value?.map((story) => {
-      const [date, title, content, photoName] = story;
+      const [date, title, content, photoName, majorEvent, color] = story;
       const photoId = photos.value?.find(
         (photo) => photoName === photo.name.split('.')[0],
       )?.id;
@@ -26,7 +26,11 @@ export const useStoryStore = defineStore('story', () => {
         month: String(dayjs(date).month() + 1),
         title,
         content,
-        photo: `https://drive.google.com/thumbnail?id=${photoId}&sz=w1366`,
+        photo:
+          photoId &&
+          `https://drive.google.com/thumbnail?id=${photoId}&sz=w1366`,
+        majorEvent: majorEvent === 'TRUE',
+        color,
       });
     });
   };

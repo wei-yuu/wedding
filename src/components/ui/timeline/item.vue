@@ -7,9 +7,7 @@
         'col-start-3 ps-6': index % 2 === 1,
       }"
     >
-      <slot name="opposite">
-        <span class="text-2xl">{{ year }} 年 {{ month }} 月</span>
-      </slot>
+      <slot name="opposite" :item="item" />
     </div>
     <!-- Divider -->
     <div
@@ -19,10 +17,13 @@
       <slot name="divider">
         <span class="absolute top-[-24px] h-6 w-1 bg-gray-300" />
         <span
-          class="h-7 w-7 rounded-full border-4 bg-gray-300"
-          :class="{
-            'border-gray-300': fullDot,
-          }"
+          class="z-10 h-7 w-7 rounded-full"
+          :class="[
+            dotColor,
+            {
+              'border-4': !fullDot,
+            },
+          ]"
         />
         <span class="absolute h-full w-1 bg-gray-300" />
       </slot>
@@ -34,36 +35,21 @@
         'col-start-3 ps-6': index % 2 === 0,
       }"
     >
-      <slot>
-        <h2 class="mb-4 text-3xl">{{ title }}</h2>
-        <slot name="content">
-          <div class="w-full text-2xl">
-            <img
-              v-if="photo"
-              class="max-w-[50%] ml-5 float-right"
-              :src="photo"
-            />
-            <span class="text-wrap break-all">{{ content }}</span>
-          </div>
-        </slot>
-      </slot>
+      <slot :item="item" />
     </div>
   </div>
 </template>
 
-<script setup lang="ts">
+<script setup lang="ts" generic="T">
 import { useTimelineStore } from '@/stores/ui/timeline/timeline.store';
 import { computed } from 'vue';
 
-defineProps<{
+const props = defineProps<{
   align?: 'start' | 'center';
+  color?: string;
   fullDot?: boolean;
   index: number;
-  year: string;
-  month: string;
-  content?: string;
-  title: string;
-  photo?: string;
+  item: T;
 }>();
 
 const store = useTimelineStore();
@@ -76,5 +62,15 @@ const dividerAlign = computed(() => {
     default:
       return 'justify-start';
   }
+});
+
+const dotColor = computed(() => {
+  return props.color
+    ? {
+        pink: 'bg-pink',
+        blue: 'bg-blue',
+        gray: 'bg-gray-300',
+      }[props.color]
+    : 'bg-gray-300';
 });
 </script>

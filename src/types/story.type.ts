@@ -4,6 +4,8 @@ export interface Story {
   title: string;
   content?: string;
   photo?: string;
+  majorEvent: boolean;
+  color: string;
 }
 
 export interface DriveFile {
