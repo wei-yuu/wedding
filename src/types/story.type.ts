@@ -5,3 +5,10 @@ export interface Story {
   content?: string;
   photo?: string;
 }
+
+export interface DriveFile {
+  id: string;
+  kind: string;
+  mimeType: string;
+  name: string;
+}
