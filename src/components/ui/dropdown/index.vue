@@ -10,11 +10,11 @@
   >
     <div
       v-show="modelValue"
-      class="absolute mt-14 grid max-h-60 w-full py-2 gap-2 overflow-auto rounded bg-white/30"
+      class="absolute mt-14 grid max-h-60 w-full p-2 gap-2 overflow-auto rounded bg-white/30"
     >
       <slot name="dropdown">
         <span
-          class="w-11/12 justify-self-center cursor-pointer rounded-lg border-2 bg-gray-200 p-2"
+          class="w-full justify-self-center cursor-pointer rounded-lg border-2 bg-gray-200 p-2"
           v-for="(option, index) in options"
           :key="index"
           @click="$emit('click', option)"
