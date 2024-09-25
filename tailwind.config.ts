@@ -3,6 +3,14 @@ export default {
   content: ['./src/**/*.{js,ts,vue}'],
   theme: {
     extend: {
+      colors: {
+        pink: {
+          DEFAULT: '#FD59CF',
+        },
+        blue: {
+          DEFAULT: '#029cfb',
+        },
+      },
       keyframes: {
         around: {
           '0%, 100%': { 'clip-path': 'inset(0 0 98% 0)' },
