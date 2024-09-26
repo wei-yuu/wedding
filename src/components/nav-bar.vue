@@ -4,7 +4,7 @@
       <router-link to="/">
         <div class="flex w-16 flex-wrap items-center justify-center">
           <img class="w-full" src="/wei-yuu.png" alt="wei-yuu" />
-          <span class="font-cursive">W & Y</span>
+          <span class="font-cursive text-2xl">W & Y</span>
         </div>
       </router-link>
       <div class="flex flex-1 justify-end font-cursive">

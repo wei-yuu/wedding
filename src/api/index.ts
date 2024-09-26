@@ -13,7 +13,7 @@ interface ResponseData {
 }
 
 const instance = axios.create({
-  baseURL: import.meta.env.GOOGLE_API ?? 'https://docs.google.com',
+  baseURL: import.meta.env.VITE_GOOGLE_API ?? 'https://docs.google.com',
 });
 
 instance.interceptors.request.use((request: InternalAxiosRequestConfig) => {
@@ -22,7 +22,7 @@ instance.interceptors.request.use((request: InternalAxiosRequestConfig) => {
 
 instance.interceptors.response.use(
   async (response: AxiosResponse<{ code: string }>) => {
-    if (response.data.code !== '200')
+    if (response.status !== 200)
       return await Promise.reject(new Error('發生錯誤，請洽管理員'));
     return response;
   },
@@ -35,3 +35,5 @@ instance.interceptors.response.use(
 );
 
 export default instance;
+
+export const apiKey = import.meta.env.VITE_API_KEY;

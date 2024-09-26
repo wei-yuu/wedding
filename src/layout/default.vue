@@ -19,3 +19,11 @@ const isHomePage = computed(() => {
   return router.currentRoute.value.path === '/';
 });
 </script>
+
+<style lang="scss">
+.scroll-bar {
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+</style>
