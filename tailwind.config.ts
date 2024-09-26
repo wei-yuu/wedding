@@ -19,6 +19,9 @@ export default {
         marble: 'url("/marble.jpg")',
         parchment: 'url("/parchment.jpg")',
         border: 'url(/border.png)',
+        flower: 'url(/images/hua3.jpg)',
+        customGradient:
+          'linear-gradient(rgba(2, 156, 251, 0.572), rgba(253, 89, 207, 0.645))',
       },
       fontFamily: {
         cursive: ['DancingScript', 'ChenYuluoyan', 'Yozai'],
