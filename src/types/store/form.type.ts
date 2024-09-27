@@ -20,4 +20,5 @@ export interface Form {
   eatingHabits: string;
   invitationType: InvitationType;
   message: string;
+  thx: string;
 }
