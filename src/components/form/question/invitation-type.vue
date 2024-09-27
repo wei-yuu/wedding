@@ -61,7 +61,7 @@ const options = [
   {
     id: 'email',
     value: '電子',
-    label: '獨愛 0 跟 1，請 mail 給我～📧',
+    label: '我是環保小尖兵，請 mail 給我～📧',
     infoLabel: 'E-Mail：',
     infoKey: 'email',
   },
