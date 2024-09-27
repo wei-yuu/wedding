@@ -9,7 +9,7 @@ const routes: RouteRecordRaw[] = [
         path: '',
         name: 'home',
         component: async () => await import('@/pages/index.vue'),
-        beforeEnter: (to, _) => {
+        beforeEnter: (to) => {
           if (to.query.redirect) {
             return { path: to.query.redirect as string };
           }
