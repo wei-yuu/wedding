@@ -9,7 +9,7 @@
     >
       <component
         v-model="form[store.current]"
-        :is="formComponent[store.current]"
+        :is="formQuestion"
         :form="store.form"
       />
     </transition>
@@ -22,6 +22,10 @@ import { useFormStore } from '@/stores/form-store';
 import { computed } from 'vue';
 
 const store = useFormStore();
+
+const formQuestion = computed(() => {
+  return formComponent[store.current as keyof typeof formComponent];
+});
 
 const form = computed(() => {
   return store.form;
