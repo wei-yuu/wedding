@@ -43,13 +43,13 @@ const options = [
   {
     id: 'bride',
     value: '新娘',
-    image: '/bride.jpg',
+    image: 'bride.jpg',
     caption: '美麗的 Yura～',
   },
   {
     id: 'groom',
     value: '新郎',
-    image: '/groom.jpg',
+    image: 'groom.jpg',
     caption: '帥氣的 Wilson！',
   },
 ];
