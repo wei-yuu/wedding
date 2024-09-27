@@ -8,6 +8,7 @@ import message from '@/components/form/question/message.vue';
 import name from '@/components/form/question/name.vue';
 import phone from '@/components/form/question/phone.vue';
 import relationship from '@/components/form/question/relationship.vue';
+import thx from '@/components/form/question/thx.vue';
 
 export {
   attend,
@@ -20,4 +21,5 @@ export {
   name,
   phone,
   relationship,
+  thx,
 };

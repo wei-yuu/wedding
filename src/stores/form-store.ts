@@ -22,10 +22,11 @@ export const useFormStore = defineStore('form', () => {
       email: '',
     },
     message: '',
+    thx: '',
   });
   const action = ref('next');
   const step = ref(0);
-  const tail = ref(Object.keys(form.value).length - 1);
+  const tail = ref(Object.keys(form.value).length - 2);
 
   const current = computed(() => {
     const formNames = ref(Object.keys(form.value));
@@ -60,7 +61,9 @@ export const useFormStore = defineStore('form', () => {
   };
 
   const submit = async () => {
-    await sentForm.fetch(form.value);
+    await sentForm.fetch(form.value).finally(() => {
+      step.value += 1;
+    });
   };
 
   return {
