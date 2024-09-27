@@ -43,7 +43,7 @@
           :disabled="disableButton"
           @click="step === tail ? submit() : next()"
         >
-          {{ step === tail ? '送出' : '確定' }}
+          {{ step === tail ? '寫完嚕！' : '下一題' }}
         </button>
       </slot>
     </span>

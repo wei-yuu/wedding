@@ -22,7 +22,10 @@
           <p
             class="relative font-cursive text-center text-2xl rounded p-4"
             :class="{
-              'active-line': modelValue === option.value,
+              'active-line-groom':
+                modelValue === option.value && option.value === '新郎',
+              'active-line-bride':
+                modelValue === option.value && option.value === '新娘',
             }"
           >
             {{ option.caption }}
@@ -53,8 +56,12 @@ const options = [
 </script>
 
 <style lang="scss" scoped>
-.active-line {
-  @apply before:absolute before:border-2 before:border-gray-300 before:top-0 before:left-0 before:bottom-0 before:right-0 before:animate-around;
-  @apply after:absolute after:border-2 after:border-gray-300 after:top-0 after:left-0 after:bottom-0 after:right-0 after:animate-around-delay;
+.active-line-groom {
+  @apply before:absolute before:border-2 before:border-blue before:top-0 before:left-0 before:bottom-0 before:right-0 before:animate-around;
+  @apply after:absolute after:border-2 after:border-blue after:top-0 after:left-0 after:bottom-0 after:right-0 after:animate-around-delay;
+}
+.active-line-bride {
+  @apply before:absolute before:border-2 before:border-pink before:top-0 before:left-0 before:bottom-0 before:right-0 before:animate-around;
+  @apply after:absolute after:border-2 after:border-pink after:top-0 after:left-0 after:bottom-0 after:right-0 after:animate-around-delay;
 }
 </style>
