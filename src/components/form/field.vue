@@ -9,6 +9,7 @@
     </span>
     <div
       class="flex gap-2 max-h-[90%] w-full flex-wrap items-center justify-evenly py-8"
+      @keypress.enter="nextQuestion()"
     >
       <button
         v-if="showChevrons"
@@ -44,7 +45,7 @@
             'hover:bg-black hover:text-white': !disableButton,
           }"
           :disabled="disableButton"
-          @click="step === tail ? submit() : next()"
+          @click="nextQuestion()"
         >
           {{ step === tail ? '寫完嚕！' : '下一題' }}
         </button>
@@ -69,4 +70,9 @@ withDefaults(
 );
 
 const { previous, next, submit, step, tail } = useFormStore();
+
+const nextQuestion = () => {
+  if (step === tail) submit();
+  else next();
+};
 </script>
