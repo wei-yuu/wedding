@@ -5,6 +5,9 @@ on:
     branches:
       - main
 
+permissions:
+  actions: write
+
 jobs:
   deploy:
     name: deploy GH pages
@@ -22,7 +25,7 @@ jobs:
         run: npm install && npm run build
 
       - name: Deploy
-        uses: peaceiris/actions-gh-pages@v4
+        uses: JamesIves/github-pages-deploy-action@v4.6.4
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
+          branch: gh-pages
+          folder: dist
