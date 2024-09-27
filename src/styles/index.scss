@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import './font.scss';
+
+html,
+body {
+  @apply bg-parchment font-cursive;
+  // font-family: 'Noto Sans TC', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  height: 100%;
+  margin: 0;
+  overflow: auto;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+input[type='text'],
+input[type='number'],
+textarea {
+  @apply bg-transparent font-cursive border-b-2 pb-2 text-3xl outline-none focus:border-b-black border-b-gray-400;
+}
+
+#app {
+  height: 100%;
+}

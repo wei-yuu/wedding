@@ -15,6 +15,7 @@ coverage
 *.local
 .npm
 
+components.d.ts
 
 /cypress/videos/
 /cypress/screenshots/

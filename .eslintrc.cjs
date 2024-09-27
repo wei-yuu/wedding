@@ -1,26 +1,39 @@
 /* eslint-env node */
-require('@rushstack/eslint-patch/modern-module-resolution')
+require('@rushstack/eslint-patch/modern-module-resolution');
 
 module.exports = {
   root: true,
-  'extends': [
+  extends: [
     'plugin:vue/vue3-essential',
     'eslint:recommended',
     '@vue/eslint-config-typescript',
-    '@vue/eslint-config-prettier/skip-formatting'
+    '@vue/eslint-config-prettier/skip-formatting',
   ],
+  rules: {
+    'prettier/prettier': ['error'],
+    'vue/multi-word-component-names': 'off',
+    'no-useless-escape': 'off',
+    'no-undef': 'off',
+    'no-console': 'warn',
+    '@typescript-eslint/no-empty-interface': [
+      'error',
+      {
+        allowSingleExtends: false,
+      },
+    ],
+    '@typescript-eslint/strict-boolean-expressions': 'off',
+  },
   overrides: [
     {
       files: [
         '**/__tests__/*.{cy,spec}.{js,ts,jsx,tsx}',
-        'cypress/e2e/**/*.{cy,spec}.{js,ts,jsx,tsx}'
+        'cypress/e2e/**/*.{cy,spec}.{js,ts,jsx,tsx}',
       ],
-      'extends': [
-        'plugin:cypress/recommended'
-      ]
-    }
+      extends: ['plugin:cypress/recommended'],
+    },
   ],
   parserOptions: {
-    ecmaVersion: 'latest'
-  }
-}
+    ecmaVersion: 'latest',
+  },
+  ignorePatterns: ['postcss.config.cjs'],
+};
