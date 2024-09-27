@@ -5,7 +5,7 @@
   "private": true,
   "scripts": {
     "dev": "vite",
-    "build": "run-p type-check build-only",
+    "build": "run-p type-check build-only && cp ./404.html ./dist/404.html",
     "deploy": "gh-pages -d dist",
     "preview": "vite preview",
     "test:e2e": "start-server-and-test preview http://localhost:4173 'cypress run --e2e'",
