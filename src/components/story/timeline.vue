@@ -11,18 +11,28 @@
       <template #opposite="{ item: { year, month } }">
         <span class="text-2xl">{{ year }} 年 {{ month }} 月</span>
       </template>
-      <template #default="{ item: { title, photo, content } }">
-        <h2 class="mb-4 text-3xl">{{ title }}</h2>
-        <slot name="content">
-          <div class="w-full text-2xl">
-            <img
-              v-if="photo"
-              class="max-w-[50%] ml-5 float-right"
-              :src="photo"
-            />
-            <span class="text-wrap break-all">{{ content }}</span>
-          </div>
-        </slot>
+      <template #default="{ item: { title, photo, description, color } }">
+        <h2
+          class="text-3xl px-4 pt-4 rounded-t-lg"
+          :class="{
+            'bg-pink/50': color === 'pink',
+            'bg-blue/50': color === 'blue',
+            'bg-gray-300/50': color === 'gray',
+          }"
+        >
+          {{ title }}
+        </h2>
+        <div
+          class="w-full text-2xl flex justify-evenly items-center p-4 bg-white/70 rounded-b-lg"
+        >
+          <span
+            v-if="description"
+            class="whitespace-pre text-wrap break-all w-1/4"
+          >
+            {{ description }}
+          </span>
+          <img v-if="photo" class="max-w-[70%]" :src="photo" />
+        </div>
       </template>
     </ui-timeline-item>
   </ui-timeline>
@@ -42,7 +52,7 @@ const timelineItems = computed(() => {
       year: story.year,
       month: story.month,
       title: story.title,
-      content: story.content,
+      description: story.description,
       photo: story.photo,
       fullDot: story.majorEvent,
       color: story.color,

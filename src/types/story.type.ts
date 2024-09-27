@@ -2,7 +2,7 @@ export interface Story {
   year: string;
   month: string;
   title: string;
-  content?: string;
+  description?: string;
   photo?: string;
   majorEvent: boolean;
   color: string;

@@ -5,13 +5,14 @@
     }"
   >
     <nav-bar />
-    <router-view />
-    <CustomFooter />
+    <div class="max-h-[calc(100vh-124px)] overflow-y-scroll scroll-bar">
+      <router-view />
+      <custom-footer />
+    </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import CustomFooter from '@/components/custom-footer.vue';
 import router from '@/router';
 import { computed } from 'vue';
 
