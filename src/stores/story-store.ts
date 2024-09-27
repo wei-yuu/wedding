@@ -16,7 +16,7 @@ export const useStoryStore = defineStore('story', () => {
     const storyList = await getStories.fetch();
 
     storyList.value?.map((story) => {
-      const [date, title, content, photoName, majorEvent, color] = story;
+      const [date, title, description, photoName, majorEvent, color] = story;
       const photoId = photos.value?.find(
         (photo) => photoName === photo.name.split('.')[0],
       )?.id;
@@ -25,7 +25,7 @@ export const useStoryStore = defineStore('story', () => {
         year: String(dayjs(date).year()),
         month: String(dayjs(date).month() + 1),
         title,
-        content,
+        description,
         photo:
           photoId &&
           `https://drive.google.com/thumbnail?id=${photoId}&sz=w1366`,
