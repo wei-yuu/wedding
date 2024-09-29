@@ -3,7 +3,7 @@
     :question="`您與${form.friendship}的關係？`"
     :disable-button="!modelValue"
   >
-    <div class="relative flex w-2/3 justify-center">
+    <div class="relative flex w-full justify-center">
       <ui-dropdown
         v-model="showOption"
         :options="filterOptions"

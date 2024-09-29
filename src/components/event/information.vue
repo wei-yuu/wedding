@@ -1,9 +1,13 @@
 <template>
   <event-card>
-    <section class="col-span-3 flex flex-wrap items-center justify-center">
+    <section
+      class="col-span-2 md:col-span-3 flex flex-wrap items-center justify-center"
+    >
       <img class="w-64" src="/wei-yuu.png" alt="wei-yuu" />
     </section>
-    <section class="col-span-2 flex flex-wrap items-center justify-center">
+    <section
+      class="col-span-3 md:col-span-2 flex flex-wrap items-center justify-center"
+    >
       <h2 class="w-full text-center text-4xl">Information</h2>
       <div class="whitespace-pre text-xl">
         <div
