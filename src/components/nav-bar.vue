@@ -7,7 +7,7 @@
           <span class="font-cursive text-2xl">W & Y</span>
         </div>
       </router-link>
-      <div class="flex flex-1 justify-end font-cursive">
+      <div class="flex flex-1 justify-end font-cursive max-md:hidden">
         <router-link
           v-for="(menu, index) in menus"
           :key="index"
@@ -25,6 +25,39 @@
           <span>{{ menu.name }}</span>
         </router-link>
       </div>
+      <div class="z-20 hidden flex-1 justify-end font-cursive max-md:flex">
+        <div
+          class="z-30 font-icon text-5xl cursor-pointer"
+          @click="showMenu = !showMenu"
+        >
+          <div v-if="!showMenu">menu</div>
+          <div v-else>close</div>
+        </div>
+        <div
+          v-if="showMenu"
+          class="absolute top-0 left-0 bg-flower bg-cover bg-center w-full h-screen"
+        >
+          <div class="absolute top-0 left-0 bg-white/40 w-full h-screen">
+            <router-link
+              v-for="(menu, index) in menus"
+              :key="index"
+              :to="menu.link"
+              class="relative mt-[15%] mx-2 px-6 py-3 flex justify-center text-4xl"
+              :class="{
+                'bg-gradient-to-b from-[#FAEAB1]': menu.link === current,
+              }"
+              @mouseenter="menu.show = true"
+              @mouseleave="menu.show = false"
+              @click="showMenu = false"
+            >
+              <transition name="border">
+                <div v-show="menu.show" :class="[afterClass, beforeClass]" />
+              </transition>
+              <span>{{ menu.name }}</span>
+            </router-link>
+          </div>
+        </div>
+      </div>
     </nav>
   </header>
 </template>
@@ -33,6 +66,8 @@
 import router from '@/router';
 import type { Menu } from '@/types/components/nav-bar.type';
 import { computed, ref } from 'vue';
+
+const showMenu = ref(false);
 
 const beforeClass =
   'before:absolute before:top-0 before:left-0 before:h-full before:w-full before:rounded before:border-t-2 before:border-l-2 before:border-gray-300';
