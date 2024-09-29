@@ -41,22 +41,26 @@
       <div class="my-10 px-44">
         <hr class="h-20 w-px border-0 border-black bg-black" />
       </div>
-      <div class="w-1/2 h-72 flex justify-between">
+      <div class="w-1/2 h-72 flex justify-between max-md:w-2/3">
         <div class="relative w-52">
           <img
-            class="absolute z-10 left-4 top-6"
+            class="absolute z-10 left-4 top-6 max-md:z-0 max-md:shadow-lg max-md:w-[90%]"
             src="/public/images/index_Yura.jpg"
             alt=""
           />
-          <div class="absolute top-0 w-60 h-52 bg-customGradient"></div>
+          <div
+            class="absolute top-0 w-60 h-52 bg-customGradient max-md:hidden"
+          ></div>
         </div>
         <div class="relative w-52">
           <img
-            class="absolute z-10 left-4 top-6"
+            class="absolute z-10 left-4 top-6 max-md:z-0 max-md:shadow-lg max-md:w-[90%]"
             src="/public/images/index_Wilson.jpg"
             alt=""
           />
-          <div class="absolute top-0 w-60 h-52 bg-customGradient"></div>
+          <div
+            class="absolute top-0 w-60 h-52 bg-customGradient max-md:hidden"
+          ></div>
         </div>
       </div>
       <div class="w-2/3 text-2xl leading-10">
