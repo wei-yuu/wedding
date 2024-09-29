@@ -1,6 +1,6 @@
 <template>
   <div
-    class="relative flex h-[calc(100vh-117px)] w-[80vw] flex-col flex-wrap items-center justify-center"
+    class="relative flex h-[calc(100vh-117px)] w-full md:w-[80vw] flex-col flex-wrap items-center justify-center"
   >
     <span class="w-full text-center">
       <slot name="question">
@@ -8,12 +8,12 @@
       </slot>
     </span>
     <div
-      class="flex gap-2 max-h-[90%] w-full flex-wrap items-center justify-evenly py-8"
+      class="flex gap-2 max-h-[90%] w-full items-center justify-evenly py-8"
       @keypress.enter="nextQuestion()"
     >
       <button
         v-if="showChevrons"
-        class="z-10 font-icon text-5xl"
+        class="z-10 font-icon text-5xl hidden md:block"
         :class="{
           invisible: step === 0,
         }"
@@ -21,12 +21,14 @@
       >
         chevron_left
       </button>
-      <slot>
-        <slot name="content" :data="data"></slot>
-      </slot>
+      <div class="w-full p-6 flex justify-center gap-4">
+        <slot>
+          <slot name="content" :data="data"></slot>
+        </slot>
+      </div>
       <button
         v-if="showChevrons"
-        class="z-10 font-icon text-5xl"
+        class="z-10 font-icon text-5xl hidden md:block"
         :class="{
           'pointer-events-none text-gray-300': disableButton,
           invisible: step === tail,

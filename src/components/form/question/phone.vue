@@ -2,7 +2,7 @@
   <form-field question="你的電話？" :disable-button="!modelValue">
     <input
       v-model="modelValue"
-      class="w-2/3"
+      class="w-full"
       type="text"
       placeholder="請留下您的電話～"
     />

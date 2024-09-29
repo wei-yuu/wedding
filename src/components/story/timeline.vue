@@ -9,7 +9,9 @@
       :color="item.color"
     >
       <template #opposite="{ item: { year, month } }">
-        <span class="text-2xl">{{ year }} 年 {{ month }} 月</span>
+        <span class="text-2xl" :class="[oppositeClass]"
+          >{{ year }} 年 {{ month }} 月</span
+        >
       </template>
       <template #default="{ item: { title, photo, description, color } }">
         <h2
@@ -23,11 +25,11 @@
           {{ title }}
         </h2>
         <div
-          class="w-full text-2xl flex justify-evenly items-center p-4 bg-white/70 rounded-b-lg"
+          class="w-full text-2xl flex justify-evenly items-center p-4 bg-white/70 rounded-b-lg gap-4"
         >
           <span
             v-if="description"
-            class="whitespace-pre text-wrap break-all w-1/4"
+            class="whitespace-pre text-wrap break-all min-w-[25%]"
           >
             {{ description }}
           </span>
@@ -45,6 +47,13 @@ import { computed } from 'vue';
 const props = defineProps<{
   stories: Story[];
 }>();
+
+const oppositeClass = computed(() => {
+  if (window.innerWidth < 768)
+    return '[writing-mode:vertical-lr] [text-orientation:upright]';
+
+  return '';
+});
 
 const timelineItems = computed(() => {
   return props.stories.map((story) => {
