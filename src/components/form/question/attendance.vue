@@ -1,6 +1,6 @@
 <template>
   <form-field question="當日出席的人數？" :disable-button="!modelValue">
-    <div class="relative flex w-2/3 justify-center">
+    <div class="relative flex w-full justify-center">
       <ui-dropdown
         v-model="showOption"
         :options="[1, 2, 3, 4, 5]"

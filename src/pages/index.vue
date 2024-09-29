@@ -59,7 +59,7 @@
           <div class="absolute top-0 w-60 h-52 bg-customGradient"></div>
         </div>
       </div>
-      <div class="w-2/3 text-2xl leading-10">
+      <div class="w-full text-2xl leading-10">
         <span
           >2021 年 5 月，Yura 剛剛轉職進入 Wilson
           的公司。公司不久後舉辦了一場減重比賽，我們因為在同一組而有了更多的接觸。一起健身、互相鼓勵，我們在這段過程中漸漸發現彼此的默契和共同點。減重比賽期間的歡笑和努力不僅改變了我們的身體，還拉近了我們的心。隨著時間的推移，感情也在不知不覺中升溫。最終，我們於
