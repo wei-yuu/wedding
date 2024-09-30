@@ -7,10 +7,7 @@
         <span class="font-cursive text-4xl">{{ question }}</span>
       </slot>
     </span>
-    <div
-      class="flex gap-2 max-h-[90%] w-full items-center justify-evenly py-8"
-      @keypress.enter="nextQuestion()"
-    >
+    <div class="flex gap-2 max-h-[90%] w-full items-center justify-evenly py-8">
       <button
         v-if="showChevrons"
         class="z-10 font-icon text-5xl hidden md:block"
