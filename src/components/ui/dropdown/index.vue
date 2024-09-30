@@ -10,7 +10,7 @@
   >
     <div
       v-show="modelValue"
-      class="absolute mt-14 grid max-h-60 w-full p-2 gap-2 overflow-auto rounded bg-white/30"
+      class="absolute mt-14 grid max-h-40 md:max-h-60 w-full p-2 gap-2 overflow-auto rounded bg-white/30"
     >
       <slot name="dropdown">
         <span
