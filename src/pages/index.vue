@@ -1,7 +1,9 @@
 <template>
-  <div class="w-full flex flex-col justify-center items-center">
+  <div class="w-full flex flex-col justify-center items-center gap-12">
     <!-- 邀請區塊 -->
-    <div class="h-[calc(100vh-124px)] w-full flex justify-center items-center">
+    <div
+      class="min-h-[calc(100vh-124px)] w-full flex justify-center items-center"
+    >
       <div class="w-[500px] h-[710px] bg-white relative flex justify-center">
         <div
           class="w-[645px] absolute bg-white mt-9 p-20 flex flex-col justify-center items-center"
@@ -35,7 +37,7 @@
     </div>
     <!-- 我們的故事 -->
     <div
-      class="w-full h-[calc(100vh-124px)] bg-parchment py-20 flex justify-center flex-col items-center"
+      class="w-full bg-parchment py-20 flex justify-center flex-col items-center"
     >
       <span class="text-5xl">我們的故事</span>
       <div class="my-10 px-44">
