@@ -2,7 +2,7 @@
   <form-field question="最後想告訴我們？" :disable-button="!modelValue">
     <textarea
       ref="message"
-      class="w-2/3 resize-none overflow-hidden whitespace-pre-wrap border-x-transparent border-t-transparent shadow-none"
+      class="w-full resize-none overflow-hidden whitespace-pre-wrap border-x-transparent border-t-transparent shadow-none"
       placeholder="開放大肆祝福唷～沒有就寫無🥹"
       :style="{
         height: textareaHeight,

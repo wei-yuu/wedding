@@ -1,12 +1,7 @@
 <template>
   <div class="contents">
     <!-- Opposite -->
-    <div
-      :class="{
-        'col-start-1 justify-self-end pe-6': index % 2 === 0,
-        'col-start-3 ps-6': index % 2 === 1,
-      }"
-    >
+    <div :class="[oppositeClass]">
       <slot name="opposite" :item="item" />
     </div>
     <!-- Divider -->
@@ -29,12 +24,7 @@
       </slot>
     </div>
     <!-- Default -->
-    <div
-      :class="{
-        'col-start-1 pe-6': index % 2 === 1,
-        'col-start-3 ps-6': index % 2 === 0,
-      }"
-    >
+    <div :class="[contentClass]">
       <slot :item="item" />
     </div>
   </div>
@@ -53,6 +43,26 @@ const props = defineProps<{
 }>();
 
 const store = useTimelineStore();
+
+const oppositeClass = computed(() => {
+  if (window.innerWidth >= 768) {
+    if (props.index % 2 === 1) {
+      return 'col-start-3 ps-6';
+    }
+  }
+
+  return 'col-start-1 justify-self-end pe-6';
+});
+
+const contentClass = computed(() => {
+  if (window.innerWidth >= 768) {
+    if (props.index % 2 === 1) {
+      return 'col-start-1 pe-6';
+    }
+  }
+
+  return 'col-start-3 ps-6';
+});
 
 const dividerAlign = computed(() => {
   switch (store.align) {
