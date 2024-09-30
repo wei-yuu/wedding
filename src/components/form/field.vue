@@ -1,6 +1,6 @@
 <template>
   <div
-    class="relative flex h-[calc(100vh-117px)] w-full md:w-[80vw] flex-col flex-wrap items-center justify-center"
+    class="relative flex h-[calc(100vh-117px)] w-full md:w-[80vw] flex-col items-center justify-center"
   >
     <span class="w-full text-center">
       <slot name="question">
@@ -21,7 +21,7 @@
       >
         chevron_left
       </button>
-      <div class="w-full p-6 flex justify-center gap-4">
+      <div class="w-full px-6 flex justify-center gap-4">
         <slot>
           <slot name="content" :data="data"></slot>
         </slot>

@@ -1,36 +1,38 @@
 <template>
-  <div class="w-full flex flex-col justify-center items-center">
+  <div class="w-full flex flex-col justify-center items-center gap-12">
     <!-- 邀請區塊 -->
     <div
-      class="w-[500px] h-[710px] bg-white relative flex justify-center mb-12"
+      class="min-h-[calc(100vh-124px)] w-full flex justify-center items-center"
     >
-      <div
-        class="w-[645px] absolute bg-white mt-9 p-20 flex flex-col justify-center items-center"
-      >
-        <span class="text-5xl">我們要結婚了！</span>
-        <span class="text-3xl mt-4">Wilson ♡ Yura</span>
-        <span class="text-3xl mt-4">誠摯邀請您來參與我們的訂婚宴</span>
-        <div class="my-10 px-44">
-          <hr class="h-20 w-px border-0 border-black bg-black" />
-        </div>
-        <span class="text-5xl">
-          2024
-          <span class="mx-1">年</span>
-          11
-          <span class="mx-1">月</span>
-          23<span class="mx-1">日</span>
-        </span>
-        <div class="flex mt-4">
-          <div class="w-7">
-            <img src="../../public/images/location.svg" alt="location" />
+      <div class="w-[500px] h-[710px] bg-white relative flex justify-center">
+        <div
+          class="w-[645px] absolute bg-white mt-9 p-20 flex flex-col justify-center items-center"
+        >
+          <span class="text-5xl">我們要結婚了！</span>
+          <span class="text-3xl mt-4">Wilson ♡ Yura</span>
+          <span class="text-3xl mt-4">誠摯邀請您來參與我們的訂婚宴</span>
+          <div class="my-10 px-44">
+            <hr class="h-20 w-px border-0 border-black bg-black" />
           </div>
-          <span class="text-3xl">成都雅宴時尚會館</span>
+          <span class="text-5xl">
+            2024
+            <span class="mx-1">年</span>
+            11
+            <span class="mx-1">月</span>
+            23<span class="mx-1">日</span>
+          </span>
+          <div class="flex mt-4">
+            <div class="w-7">
+              <img src="../../public/images/location.svg" alt="location" />
+            </div>
+            <span class="text-3xl">成都雅宴時尚會館</span>
+          </div>
+          <router-link :to="'/form'" class="mt-4">
+            <button class="custom-btn btn-7">
+              <span class="text-2xl p-1">點此報名</span>
+            </button>
+          </router-link>
         </div>
-        <router-link :to="'/form'" class="mt-4">
-          <button class="custom-btn btn-7">
-            <span class="text-2xl p-1">點此報名</span>
-          </button>
-        </router-link>
       </div>
     </div>
     <!-- 我們的故事 -->
