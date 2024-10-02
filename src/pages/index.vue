@@ -4,9 +4,11 @@
     <div
       class="min-h-[calc(100vh-124px)] w-full flex justify-center items-center"
     >
-      <div class="w-[500px] h-[710px] bg-white relative flex justify-center">
+      <div
+        class="w-full md:w-[500px] h-[710px] bg-white relative flex justify-center items-center"
+      >
         <div
-          class="w-[645px] absolute bg-white mt-9 p-20 flex flex-col justify-center items-center"
+          class="w-full md:w-[645px] absolute bg-white p-8 md:p-20 flex flex-col justify-center items-center"
         >
           <span class="text-5xl">我們要結婚了！</span>
           <span class="text-3xl mt-4">Wilson ♡ Yura</span>
@@ -43,7 +45,7 @@
       <div class="my-10 px-44">
         <hr class="h-20 w-px border-0 border-black bg-black" />
       </div>
-      <div class="w-1/2 h-72 flex justify-between max-md:w-2/3">
+      <div class="w-1/2 h-56 md:h-72 flex justify-between max-md:w-2/3">
         <div class="relative w-52">
           <img
             class="absolute z-10 left-4 top-6 max-md:z-0 max-md:shadow-lg max-md:w-[90%]"
@@ -72,6 +74,11 @@
           2022 年 7 月開始正式交往，踏上了屬於我們的愛情旅程。</span
         >
       </div>
+      <router-link :to="'/our-story'" class="mt-8">
+        <button class="custom-btn btn-7">
+          <span class="text-2xl p-1">更多的我們</span>
+        </button>
+      </router-link>
     </div>
   </div>
 </template>
