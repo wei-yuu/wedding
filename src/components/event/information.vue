@@ -29,7 +29,7 @@ import { ref } from 'vue';
 const information = ref([
   {
     label: '日期：',
-    text: '11/23',
+    text: '11 月 23 日',
   },
   {
     label: '時間：',
