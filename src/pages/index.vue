@@ -12,7 +12,9 @@
         >
           <span class="text-5xl">我們要結婚了！</span>
           <span class="text-3xl mt-4">Wilson ♡ Yura</span>
-          <span class="text-3xl mt-4">誠摯邀請您來參與我們的訂婚宴</span>
+          <span class="text-2xl sm:text-3xl mt-4">
+            誠摯邀請您來參與我們的訂婚宴
+          </span>
           <div class="my-10 px-44">
             <hr class="h-20 w-px border-0 border-black bg-black" />
           </div>
