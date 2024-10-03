@@ -1,5 +1,5 @@
 <template>
-  <header class="sticky top-0 flex items-center justify-center z-10">
+  <header class="flex items-center justify-center bg-white/10">
     <nav class="flex w-[90%] items-center justify-between px-0 py-3">
       <router-link to="/">
         <div class="flex w-16 flex-wrap items-center justify-center">
@@ -37,12 +37,14 @@
           v-if="showMenu"
           class="absolute top-0 left-0 bg-flower bg-cover bg-center w-full h-screen"
         >
-          <div class="absolute top-0 left-0 bg-white/40 w-full h-screen">
+          <div
+            class="pt-24 bg-white/60 w-full h-screen flex flex-col flex-1 gap-16"
+          >
             <router-link
               v-for="(menu, index) in menus"
               :key="index"
               :to="menu.link"
-              class="relative mt-[15%] mx-2 px-6 py-3 flex justify-center text-4xl"
+              class="relative mx-2 px-6 py-3 flex justify-center text-4xl"
               :class="{
                 'bg-gradient-to-b from-[#FAEAB1]': menu.link === current,
               }"
@@ -50,9 +52,6 @@
               @mouseleave="menu.show = false"
               @click="showMenu = false"
             >
-              <transition name="border">
-                <div v-show="menu.show" :class="[afterClass, beforeClass]" />
-              </transition>
               <span>{{ menu.name }}</span>
             </router-link>
           </div>
