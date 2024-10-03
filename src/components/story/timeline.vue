@@ -29,7 +29,7 @@
         >
           <span
             v-if="description"
-            class="whitespace-pre text-wrap break-all min-w-[25%]"
+            class="whitespace-pre-line text-wrap break-all min-w-[25%]"
           >
             {{ description }}
           </span>
