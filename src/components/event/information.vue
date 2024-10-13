@@ -33,7 +33,7 @@ const information = ref([
   },
   {
     label: '時間：',
-    text: '11:00 儀式\n12:00 準時開席',
+    text: '11:00 儀式\n12:30 準時開席',
   },
   {
     label: '地點：',
