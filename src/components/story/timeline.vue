@@ -25,15 +25,15 @@
           {{ title }}
         </h2>
         <div
-          class="w-full text-2xl flex justify-evenly items-center p-4 bg-white/70 rounded-b-lg gap-4"
+          class="w-full text-2xl flex justify-evenly items-center p-4 bg-white/70 rounded-b-lg gap-4 flex-wrap"
         >
+          <img v-if="photo" class="w-4/5" :src="photo" />
           <span
             v-if="description"
-            class="whitespace-pre-line text-wrap break-all min-w-[25%]"
+            class="text-center whitespace-pre-line text-wrap break-all w-full"
           >
             {{ description }}
           </span>
-          <img v-if="photo" class="max-w-[70%]" :src="photo" />
         </div>
       </template>
     </ui-timeline-item>
