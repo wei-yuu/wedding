@@ -34,6 +34,7 @@ export default {
       fontFamily: {
         cursive: ['ChenYuluoyan', 'DancingScript', 'Yozai'],
         icon: 'Material Icons',
+        yozai: 'Yozai',
       },
       transitionDuration: {
         900: '900ms',
