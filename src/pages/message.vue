@@ -1,32 +1,37 @@
 <template>
   <div class="relative h-screen w-screen">
-    <div class="h-full w-full p-10 flex justify-center items-center">
-      <img
-        class="max-h-full max-w-full"
-        src="/public/wall.jpg"
-        alt=""
-        srcset=""
-      />
-    </div>
-    <div class="absolute top-0 h-full w-full">
-      <bullet-screen v-if="mounted" :quantity="7" :magazine="messages" />
-    </div>
+    <template v-if="!store.loading">
+      <bullet-background :model-value="store.backgrounds" />
+      <div class="absolute top-0 h-full w-full">
+        <bullet-screen :quantity="7" :magazine="store.messages" />
+      </div>
+    </template>
   </div>
 </template>
 
 <script setup lang="ts">
 import { useMessageStore } from '@/stores/message-store';
-import { onMounted, ref, watch } from 'vue';
+import { onMounted, watch } from 'vue';
 
-const { messages, getShuffleMessage } = useMessageStore();
-
-const mounted = ref(false);
+const store = useMessageStore();
+const { getShuffleMessage, getShuffleBackground, init } = store;
 
 watch(
-  () => messages,
+  () => store.messages,
   () => {
-    if (!messages.length) {
+    if (!store.messages.length) {
       void getShuffleMessage();
+    }
+  },
+  {
+    deep: true,
+  },
+);
+watch(
+  () => store.backgrounds,
+  () => {
+    if (!store.backgrounds.length) {
+      void getShuffleBackground();
     }
   },
   {
@@ -35,8 +40,6 @@ watch(
 );
 
 onMounted(async () => {
-  await getShuffleMessage();
-
-  mounted.value = true;
+  await init();
 });
 </script>
