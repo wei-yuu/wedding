@@ -32,6 +32,10 @@ const routes: RouteRecordRaw[] = [
       },
     ],
   },
+  {
+    path: '/message',
+    component: async () => await import('@/pages/message.vue'),
+  },
 ];
 
 export default routes;
