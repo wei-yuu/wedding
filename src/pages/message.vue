@@ -1,6 +1,7 @@
 <template>
   <div class="relative h-screen w-screen">
     <template v-if="!store.loading">
+      <youtube-player id="PLEROZ9PIiEwFLgV6pmglKtdJDM472YTjO" />
       <bullet-background :model-value="store.backgrounds" />
       <div class="absolute top-0 h-full w-full">
         <bullet-screen :quantity="7" :magazine="store.messages" />
