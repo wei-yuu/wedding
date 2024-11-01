@@ -14,7 +14,15 @@
         <!-- Header -->
         <div
           v-if="slots.header || title"
-          class="flex items-center justify-between h-[56px] py-1 pr-3 pl-5 font-medium text-gray-900 text-xl"
+          class="flex items-center h-[56px] py-1 pr-3 pl-5 font-medium text-gray-900 text-3xl"
+          :class="[
+            {
+              'justify-between': !(
+                headerClasses && /justify/.test(headerClasses)
+              ),
+            },
+            headerClasses,
+          ]"
         >
           <slot name="header">
             {{ title }}
@@ -55,6 +63,7 @@ import { ref, useSlots } from 'vue';
 withDefaults(
   defineProps<{
     title?: string;
+    headerClasses?: string;
     contentClasses?: string;
     footerClasses?: string;
     showClose?: boolean;
