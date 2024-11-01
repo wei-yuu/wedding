@@ -1,5 +1,6 @@
 import { useGetBackgrounds } from '@/composables/message/use-get-background';
 import { useGetMessages } from '@/composables/message/use-get-message';
+import { appLoading } from '@/plugins/app-loading';
 import type { Background, Message } from '@/types/message.type';
 import { shuffle } from '@/utils/shuffle';
 import { defineStore } from 'pinia';
@@ -51,6 +52,7 @@ export const useMessageStore = defineStore('message', () => {
 
   const init = async () => {
     loading.value = true;
+    appLoading.start('正在尋找祝福~');
 
     try {
       await getShuffleMessage();
@@ -58,6 +60,7 @@ export const useMessageStore = defineStore('message', () => {
     } catch (e) {
       throw new Error(String(e));
     } finally {
+      appLoading.stop();
       loading.value = false;
     }
   };
