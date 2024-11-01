@@ -21,6 +21,7 @@
           </slot>
           <slot name="header-action" :close="close">
             <div
+              v-if="showClose"
               class="font-icon grid w-8 h-8 cursor-pointer place-items-center"
               @click="close"
             >
@@ -51,11 +52,17 @@
 <script setup lang="ts">
 import { ref, useSlots } from 'vue';
 
-defineProps<{
-  title?: string;
-  contentClasses?: string;
-  footerClasses?: string;
-}>();
+withDefaults(
+  defineProps<{
+    title?: string;
+    contentClasses?: string;
+    footerClasses?: string;
+    showClose?: boolean;
+  }>(),
+  {
+    showClose: true,
+  },
+);
 
 const visible = defineModel('visible', { default: false });
 const slots = useSlots();
