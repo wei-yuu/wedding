@@ -14,7 +14,7 @@
         <!-- Header -->
         <div
           v-if="slots.header || title"
-          class="flex items-center justify-between h-[56px] border-b border-b-gray-200 py-1 pr-3 pl-5 font-medium text-gray-900 text-xl"
+          class="flex items-center justify-between h-[56px] py-1 pr-3 pl-5 font-medium text-gray-900 text-xl"
         >
           <slot name="header">
             {{ title }}
@@ -32,7 +32,7 @@
         <!-- Content -->
         <div
           v-if="slots.default"
-          class="px-5 pt-4 pb-6"
+          class="px-5 pt-4 pb-6 border-y border-y-gray-200"
           :class="[contentClasses]"
         >
           <slot></slot>
@@ -40,7 +40,7 @@
         <!-- Footer(Buttons) -->
         <div
           v-if="slots.footer"
-          class="h-[58px] border-t border-t-gray-200 px-5 py-3"
+          class="h-[58px] px-5 py-3"
           :class="[footerClasses]"
         >
           <slot name="footer"></slot>
