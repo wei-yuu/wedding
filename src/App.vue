@@ -1,4 +1,5 @@
 <template>
+  <ui-loading />
   <main class="flex flex-col">
     <router-view />
   </main>
