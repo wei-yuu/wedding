@@ -1,16 +1,16 @@
 import { useGetBackgrounds } from '@/composables/message/use-get-background';
 import { useGetMessages } from '@/composables/message/use-get-message';
 import { appLoading } from '@/plugins/app-loading';
+import { appNotify } from '@/plugins/app-notify';
 import type { Background, Message } from '@/types/message.type';
 import { shuffle } from '@/utils/shuffle';
 import { defineStore } from 'pinia';
-import { readonly, ref } from 'vue';
+import { ref } from 'vue';
 
 export const useMessageStore = defineStore('message', () => {
   const getMessages = useGetMessages();
   const getBackgrounds = useGetBackgrounds();
 
-  const loading = ref(false);
   const messages = ref<Message[]>([]);
   const backgrounds = ref<Background[]>([]);
 
@@ -50,8 +50,7 @@ export const useMessageStore = defineStore('message', () => {
     }
   };
 
-  const init = async () => {
-    loading.value = true;
+  const init = async (): Promise<boolean> => {
     appLoading.start('正在尋找祝福~');
 
     try {
@@ -61,12 +60,21 @@ export const useMessageStore = defineStore('message', () => {
       throw new Error(String(e));
     } finally {
       appLoading.stop();
-      loading.value = false;
     }
+
+    const result = await appNotify.alert({
+      title: '祝福已就定位！',
+      options: {
+        button: {
+          text: '讓我們開始吧～ε٩(๑> ₃ <)۶з',
+        },
+      },
+    });
+
+    return result;
   };
 
   return {
-    loading: readonly(loading),
     messages,
     backgrounds,
     init,
