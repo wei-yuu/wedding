@@ -28,8 +28,10 @@ export default {
         parchment: 'url("/parchment.jpg")',
         border: 'url(/border.png)',
         flower: 'url(/images/hua3.jpg)',
-        customGradient:
+        hydrangeas:
           'linear-gradient(rgba(2, 156, 251, 0.572), rgba(253, 89, 207, 0.645))',
+        'hydrangeas-t':
+          'linear-gradient(to top, rgba(2, 156, 251, 0.572) 20%, rgba(253, 89, 207, 0.645) 60%)',
       },
       fontFamily: {
         cursive: ['ChenYuluoyan', 'DancingScript', 'Yozai'],
@@ -40,6 +42,18 @@ export default {
         900: '900ms',
         2000: '2000ms',
         3000: '3000ms',
+      },
+      boxShadow: {
+        button:
+          'inset 2px 2px 2px rgba(255, 255, 255, 0.5), 7px 7px 20px rgba(0, 0, 0, 0.1), 4px 4px 5px rgba(0, 0, 0, 0.1)',
+      },
+      dropShadow: {
+        button: [
+          '-7px -7px 20px rgba(255, 255, 255, 0.9)',
+          '-4px -4px 2px rgba(255, 255, 255, 0.9)',
+          '7px 7px 20px rgba(0, 0, 0, 0.2)',
+          '4px 4px 2px rgba(0, 0, 0, 0.3)',
+        ],
       },
     },
   },
