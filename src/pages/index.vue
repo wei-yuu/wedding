@@ -32,9 +32,7 @@
             <span class="text-3xl">成都雅宴時尚會館</span>
           </div>
           <router-link :to="'/form'" class="mt-4">
-            <button class="custom-btn btn-7">
-              <span class="text-2xl p-1">點此報名</span>
-            </button>
+            <ui-button>點此報名</ui-button>
           </router-link>
         </div>
       </div>
@@ -54,9 +52,7 @@
             src="/public/images/index_Yura.jpg"
             alt=""
           />
-          <div
-            class="absolute top-0 w-60 h-52 bg-customGradient max-md:hidden"
-          ></div>
+          <div class="absolute top-0 w-60 h-52 bg-hydrangeas max-md:hidden" />
         </div>
         <div class="relative w-52">
           <img
@@ -64,9 +60,7 @@
             src="/public/images/index_Wilson.jpg"
             alt=""
           />
-          <div
-            class="absolute top-0 w-60 h-52 bg-customGradient max-md:hidden"
-          ></div>
+          <div class="absolute top-0 w-60 h-52 bg-hydrangeas max-md:hidden" />
         </div>
       </div>
       <div class="w-4/5 text-2xl leading-10 max-md:px-2">
@@ -77,9 +71,7 @@
         >
       </div>
       <router-link :to="'/our-story'" class="mt-8">
-        <button class="custom-btn btn-7">
-          <span class="text-2xl p-1">更多的我們</span>
-        </button>
+        <ui-button>更多的我們</ui-button>
       </router-link>
     </div>
   </div>
