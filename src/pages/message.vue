@@ -1,6 +1,6 @@
 <template>
   <div class="relative h-screen w-screen">
-    <template v-if="!store.loading">
+    <template v-if="initFinish">
       <youtube-player id="PLEROZ9PIiEwFLgV6pmglKtdJDM472YTjO" />
       <bullet-background :model-value="store.backgrounds" />
       <div class="absolute top-0 h-full w-full">
@@ -12,10 +12,12 @@
 
 <script setup lang="ts">
 import { useMessageStore } from '@/stores/message-store';
-import { onMounted, watch } from 'vue';
+import { onMounted, ref, watch } from 'vue';
 
 const store = useMessageStore();
 const { getShuffleMessage, getShuffleBackground, init } = store;
+
+const initFinish = ref(false);
 
 watch(
   () => store.messages,
@@ -41,6 +43,6 @@ watch(
 );
 
 onMounted(async () => {
-  await init();
+  initFinish.value = await init();
 });
 </script>
