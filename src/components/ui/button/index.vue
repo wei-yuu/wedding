@@ -7,6 +7,7 @@
     }"
     @mouseenter="hovering = true"
     @mouseleave="hovering = false"
+    @click="emits('click')"
   >
     <transition name="border">
       <span v-show="hovering" :class="[beforeClass, afterClass]" />
@@ -31,12 +32,14 @@ import { computed, ref } from 'vue';
 
 const props = withDefaults(
   defineProps<{
-    color?: ButtonColor;
+    color?: ButtonColor | `${ButtonColor}`;
   }>(),
   {
     color: ButtonColor.Gradient,
   },
 );
+
+const emits = defineEmits<(e: 'click') => void>();
 
 const hovering = ref(false);
 
@@ -55,7 +58,7 @@ const beforeClass = computed(() => {
 
   switch (props.color) {
     case ButtonColor.Gray:
-      before.push('before:border-gray-300');
+      before.push('before:border-gray-500');
       break;
     case ButtonColor.Pink:
       before.push('before:border-[rgba(253,89,207,0.645)]');
@@ -84,7 +87,7 @@ const afterClass = computed(() => {
 
   switch (props.color) {
     case ButtonColor.Gray:
-      after.push('after:border-gray-300');
+      after.push('after:border-gray-500');
       break;
     case ButtonColor.Blue:
       after.push('after:border-[rgba(2,156,251,0.572)]');
@@ -117,7 +120,7 @@ const textClass = computed(() => {
     case ButtonColor.Blue:
       return 'bg-[rgba(2,156,251,0.572)]';
     case ButtonColor.Gray:
-      return 'bg-gray-300';
+      return 'bg-gray-500';
     case ButtonColor.Pink:
       return 'bg-[rgba(253,89,207,0.645)]';
     case ButtonColor.Gradient:
