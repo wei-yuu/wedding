@@ -3,7 +3,7 @@
     class="relative flex justify-center items-center px-6 py-1 rounded text-2xl shadow-button"
     :class="{
       'bg-transparent text-transparent': hovering,
-      [buttonClass]: !hovering,
+      [buttonBackground]: !hovering,
     }"
     @mouseenter="hovering = true"
     @mouseleave="hovering = false"
@@ -61,12 +61,12 @@ const beforeClass = computed(() => {
       before.push('before:border-gray-500');
       break;
     case ButtonColor.Pink:
-      before.push('before:border-[rgba(253,89,207,0.645)]');
+      before.push('before:border-pink/60');
       break;
     case ButtonColor.Blue:
     case ButtonColor.Gradient:
     default:
-      before.push('before:border-[rgba(2,156,251,0.572)]');
+      before.push('before:border-blue/60');
       break;
   }
   return before;
@@ -90,42 +90,42 @@ const afterClass = computed(() => {
       after.push('after:border-gray-500');
       break;
     case ButtonColor.Blue:
-      after.push('after:border-[rgba(2,156,251,0.572)]');
+      after.push('after:border-blue/60');
       break;
     case ButtonColor.Gradient:
     case ButtonColor.Pink:
     default:
-      after.push('after:border-[rgba(253,89,207,0.645)]');
+      after.push('after:border-pink/60');
       break;
   }
   return after;
 });
 
-const buttonClass = computed(() => {
+const buttonBackground = computed(() => {
   switch (props.color) {
     case ButtonColor.Blue:
-      return 'bg-[rgba(2,156,251,0.572)]';
+      return 'bg-blue/60';
     case ButtonColor.Gray:
       return 'bg-gray-300';
     case ButtonColor.Pink:
-      return 'bg-[rgba(253,89,207,0.645)]';
+      return 'bg-pink/60';
     case ButtonColor.Gradient:
     default:
-      return 'bg-hydrangeas';
+      return 'bg-gradient-to-b from-blue/60 to-pink/60';
   }
 });
 
 const textClass = computed(() => {
   switch (props.color) {
     case ButtonColor.Blue:
-      return 'bg-[rgba(2,156,251,0.572)]';
+      return 'bg-blue/60';
     case ButtonColor.Gray:
       return 'bg-gray-500';
     case ButtonColor.Pink:
-      return 'bg-[rgba(253,89,207,0.645)]';
+      return 'bg-pink/60';
     case ButtonColor.Gradient:
     default:
-      return 'bg-hydrangeas-t';
+      return 'bg-gradient-to-t from-blue/60 from-20% to-pink/60 to-60%';
   }
 });
 </script>

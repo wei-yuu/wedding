@@ -4,11 +4,31 @@ export default {
   theme: {
     extend: {
       colors: {
+        blue: {
+          DEFAULT: '#029CFB',
+          50: '#E6F5FF',
+          100: '#CCEBFF',
+          200: '#9AD8FE',
+          300: '#67C4FE',
+          400: '#35B0FD',
+          500: '#029CFB',
+          600: '#027DCA',
+          700: '#015E98',
+          800: '#013F65',
+          900: '#001F33',
+        },
         pink: {
           DEFAULT: '#FD59CF',
-        },
-        blue: {
-          DEFAULT: '#029cfb',
+          50: '#FFF0FB',
+          100: '#FFDCF5',
+          200: '#FEBDEC',
+          300: '#FE9AE2',
+          400: '#FD7CD9',
+          500: '#FD59CF',
+          600: '#FC17BB',
+          700: '#CA0291',
+          800: '#880262',
+          900: '#42012F',
         },
       },
       keyframes: {
@@ -28,10 +48,6 @@ export default {
         parchment: 'url("/parchment.jpg")',
         border: 'url(/border.png)',
         flower: 'url(/images/hua3.jpg)',
-        hydrangeas:
-          'linear-gradient(rgba(2, 156, 251, 0.572), rgba(253, 89, 207, 0.645))',
-        'hydrangeas-t':
-          'linear-gradient(to top, rgba(2, 156, 251, 0.572) 20%, rgba(253, 89, 207, 0.645) 60%)',
       },
       fontFamily: {
         cursive: ['ChenYuluoyan', 'DancingScript', 'Yozai'],
