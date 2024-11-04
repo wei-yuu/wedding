@@ -1,5 +1,5 @@
 import { useNotifyStore } from '@/stores/ui/notify-store';
-import type { Button } from '@/types/components/ui/button.type';
+import { ButtonColor, type Button } from '@/types/components/ui/button.type';
 import { type App, type VNode } from 'vue';
 
 const alert = async ({
@@ -22,6 +22,7 @@ const alert = async ({
         buttons: [
           {
             text: options?.button?.text ?? '關閉',
+            color: options?.button?.color ?? ButtonColor.Gradient,
             callback:
               options?.button?.callback ??
               (() => {
@@ -58,6 +59,7 @@ const confirm = async ({
         buttons: [
           {
             text: options?.cancelButton?.text ?? '取消',
+            color: options?.cancelButton?.color ?? ButtonColor.Gray,
             callback:
               options?.cancelButton?.callback ??
               (() => {
@@ -67,6 +69,7 @@ const confirm = async ({
           },
           {
             text: options?.confirmButton?.text ?? '確定',
+            color: options?.confirmButton?.color ?? ButtonColor.Pink,
             callback:
               options?.confirmButton?.callback ??
               (() => {
