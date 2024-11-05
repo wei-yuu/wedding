@@ -50,17 +50,21 @@
           <img
             class="absolute z-10 left-4 top-6 max-md:z-0 max-md:shadow-lg max-md:w-[90%]"
             src="/public/images/index_Yura.jpg"
-            alt=""
+            alt="Yura"
           />
-          <div class="absolute top-0 w-60 h-52 bg-hydrangeas max-md:hidden" />
+          <div
+            class="absolute top-0 w-60 h-52 bg-gradient-to-b from-blue/60 to-pink/60 max-md:hidden"
+          />
         </div>
         <div class="relative w-52">
           <img
             class="absolute z-10 left-4 top-6 max-md:z-0 max-md:shadow-lg max-md:w-[90%]"
             src="/public/images/index_Wilson.jpg"
-            alt=""
+            alt="Wilson"
           />
-          <div class="absolute top-0 w-60 h-52 bg-hydrangeas max-md:hidden" />
+          <div
+            class="absolute top-0 w-60 h-52 bg-gradient-to-b from-blue/60 to-pink/60 max-md:hidden"
+          />
         </div>
       </div>
       <div class="w-4/5 text-2xl leading-10 max-md:px-2">
