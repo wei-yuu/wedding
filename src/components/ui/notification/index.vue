@@ -10,14 +10,14 @@
       <div>{{ store.message }}</div>
     </template>
     <template #footer>
-      <button
-        class="custom-btn btn-7"
+      <ui-button
         v-for="(button, index) in store.buttons"
         :key="index"
+        :color="button.color"
         @click="button.callback"
       >
-        <span class="text-lg p-1">{{ button.text }}</span>
-      </button>
+        {{ button.text }}
+      </ui-button>
     </template>
   </ui-dialog>
 </template>

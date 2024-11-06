@@ -1,4 +1,4 @@
-import type { Button } from '@/types/components/ui/button.type';
+import { ButtonColor, type Button } from '@/types/components/ui/button.type';
 import { defineStore } from 'pinia';
 import type { VNode } from 'vue';
 
@@ -36,6 +36,7 @@ export const useNotifyStore = defineStore('notify', {
         this.buttons = payload.buttons ?? [
           {
             text: '關閉',
+            color: ButtonColor.Gray,
             callback: () => (this.visible = false),
           },
         ];
