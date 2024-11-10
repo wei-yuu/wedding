@@ -23,8 +23,6 @@ export const useMessageStore = defineStore('message', () => {
       messageList.forEach((data) => {
         const [name, message] = data;
 
-        if (message === '無') return;
-
         messages.value.push({
           name,
           message,

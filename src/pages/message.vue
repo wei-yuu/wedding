@@ -2,9 +2,9 @@
   <div class="relative h-screen w-screen">
     <template v-if="initFinish">
       <youtube-player id="PLEROZ9PIiEwFLgV6pmglKtdJDM472YTjO" />
-      <bullet-background :model-value="store.backgrounds" />
+      <bullet-background :model-value="backgrounds" />
       <div class="absolute top-0 h-full w-full">
-        <bullet-screen :quantity="7" :magazine="store.messages" />
+        <bullet-screen :quantity="bulletQuantity" :magazine="messages" />
       </div>
     </template>
   </div>
@@ -14,15 +14,16 @@
 import { useMessageStore } from '@/stores/message-store';
 import { onMounted, ref, watch } from 'vue';
 
-const store = useMessageStore();
-const { getShuffleMessage, getShuffleBackground, init } = store;
+const { backgrounds, messages, getShuffleMessage, getShuffleBackground, init } =
+  useMessageStore();
 
 const initFinish = ref(false);
+const bulletQuantity = ref(7);
 
 watch(
-  () => store.messages,
+  () => messages,
   () => {
-    if (!store.messages.length) {
+    if (messages.length < bulletQuantity.value + 1) {
       void getShuffleMessage();
     }
   },
@@ -31,9 +32,9 @@ watch(
   },
 );
 watch(
-  () => store.backgrounds,
+  () => backgrounds,
   () => {
-    if (!store.backgrounds.length) {
+    if (!backgrounds.length) {
       void getShuffleBackground();
     }
   },
