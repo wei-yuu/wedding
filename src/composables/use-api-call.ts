@@ -1,12 +1,12 @@
 import { readonly, ref } from 'vue';
 
-export const useApiCall = <T, R>(
-  fetch: (...payload: R[]) => Promise<T> | T,
+export const useApiCall = <T, R extends any[]>(
+  fetch: (...payload: R) => Promise<T> | T,
 ) => {
   const error = ref();
   const loading = ref<boolean>(false);
   const data = ref<T>();
-  const wrappedFetch = async (...payload: R[]) => {
+  const wrappedFetch = async (...payload: R) => {
     loading.value = true;
     const response = await Promise.resolve(fetch(...payload))
       .catch((e) => {

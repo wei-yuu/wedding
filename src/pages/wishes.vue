@@ -12,16 +12,21 @@
         <span>想對我們說：</span>
         <input class="w-full" type="text" v-model="message" />
       </div>
-      <ui-button color="blue" @click="submit">發送～ (๑•̀ω•́)ノ</ui-button>
+      <ui-button color="blue" @click="submit">(๑•̀ω•́)ノ [發送 !!]</ui-button>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
+import { useCreateMessages } from '@/composables/message/use-create-message';
 import { ref } from 'vue';
+
+const { fetch } = useCreateMessages();
 
 const name = ref('');
 const message = ref('');
 
-const submit = () => {};
+const submit = () => {
+  fetch(['wilson', 'test']);
+};
 </script>
