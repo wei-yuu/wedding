@@ -71,6 +71,9 @@ export default {
           '4px 4px 2px rgba(0, 0, 0, 0.3)',
         ],
       },
+      gridTemplateRows: {
+        20: 'repeat(20, minmax(0, 1fr))',
+      },
     },
   },
   plugins: [],
