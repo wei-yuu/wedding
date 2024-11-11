@@ -14,7 +14,8 @@
           :to="menu.link"
           class="relative mx-2 flex items-center justify-center rounded px-6 py-3 text-3xl"
           :class="{
-            'bg-gradient-to-b from-[#FAEAB1]': menu.link === current,
+            'bg-gradient-to-b from-blue-300/60 to-pink-300/60':
+              menu.link === current,
           }"
           @mouseenter="menu.show = true"
           @mouseleave="menu.show = false"
@@ -46,7 +47,8 @@
               :to="menu.link"
               class="relative mx-2 px-6 py-3 flex justify-center text-4xl"
               :class="{
-                'bg-gradient-to-b from-[#FAEAB1]': menu.link === current,
+                'bg-gradient-to-b from-blue-300/60 to-pink-300/60':
+                  menu.link === current,
               }"
               @mouseenter="menu.show = true"
               @mouseleave="menu.show = false"
@@ -80,12 +82,12 @@ const menus = ref<Menu[]>([
     show: false,
   },
   {
-    name: '婚禮表單',
-    link: '/form',
+    name: '婚禮座位表',
+    link: '/seating',
     show: false,
   },
   {
-    name: '活動詳細',
+    name: '活動詳情',
     link: '/event-detail',
     show: false,
   },
