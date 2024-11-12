@@ -12,7 +12,7 @@
     >
       <div
         v-if="visible"
-        class="relative m-auto px-6 bg-white rounded-lg max-w-[500px]"
+        class="relative m-auto px-6 bg-white rounded-lg max-w-[800px]"
       >
         <!-- Header -->
         <div
