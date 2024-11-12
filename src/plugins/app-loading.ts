@@ -1,9 +1,9 @@
 import { useLoadingStore } from '@/stores/ui/loading-store';
 import { type App } from 'vue';
 
-const start = (message: string) => {
+const start = (message: string, icon?: string) => {
   const store = useLoadingStore();
-  store.show(message);
+  store.show(message, icon);
 };
 
 const stop = () => {

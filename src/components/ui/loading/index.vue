@@ -18,7 +18,10 @@
           class="absolute top-[100px] flex flex-col gap-2 rounded-lg p-2 justify-center items-center w-[260px] h-[180px] bg-white shadow-[0_4px_12px_0_#00000029]"
         >
           <div class="relative flex w-full h-full justify-center items-center">
-            <div class="absolute w-16 h-16 font-icon m-auto loading" />
+            <div
+              class="absolute w-16 h-16 font-icon m-auto loading"
+              :data-icon="icon"
+            />
             <img
               class="w-16 h-16 border-2 border-gray-300 rounded-full"
               src="/loading.png"
@@ -33,18 +36,22 @@
 </template>
 <script setup lang="ts">
 import { useLoadingStore } from '@/stores/ui/loading-store';
-import { ref } from 'vue';
+import { computed, ref } from 'vue';
 
 const store = useLoadingStore();
 
 const visibleOverlay = ref(false);
+
+const icon = computed(() => {
+  return store.icon ?? 'search';
+});
 </script>
 
 <style lang="scss" scoped>
 .loading {
   animation: rotation 3s infinite linear;
   &::before {
-    content: 'search';
+    content: attr(data-icon);
     position: absolute;
     left: -15px;
     top: -15px;
