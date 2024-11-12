@@ -10,11 +10,14 @@
       @before-enter="visibleOverlay = true"
       @after-leave="visibleOverlay = false"
     >
-      <div v-if="visible" class="relative m-auto bg-white rounded-lg w-[500px]">
+      <div
+        v-if="visible"
+        class="relative m-auto px-6 bg-white rounded-lg max-w-[500px]"
+      >
         <!-- Header -->
         <div
           v-if="slots.header || title"
-          class="flex items-center h-[56px] py-1 pr-3 pl-5 font-medium text-gray-900 text-3xl"
+          class="flex items-center h-[56px] py-1 pr-3 pl-5 font-medium text-gray-900 md:text-4xl text-2xl"
           :class="[
             {
               'justify-between': !(

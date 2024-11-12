@@ -7,7 +7,7 @@
     :show-close="false"
   >
     <template #default v-if="store.message">
-      <div>{{ store.message }}</div>
+      <p class="md:text-2xl text-lg text-center">{{ store.message }}</p>
     </template>
     <template #footer>
       <ui-button
