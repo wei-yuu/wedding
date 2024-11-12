@@ -60,22 +60,22 @@ const confirm = async ({
           {
             text: options?.cancelButton?.text ?? '取消',
             color: options?.cancelButton?.color ?? ButtonColor.Gray,
-            callback:
-              options?.cancelButton?.callback ??
-              (() => {
-                store.visible = false;
-                resolve(false);
-              }),
+            callback: () => {
+              if (options?.cancelButton?.callback)
+                options?.cancelButton?.callback();
+              store.visible = false;
+              resolve(false);
+            },
           },
           {
             text: options?.confirmButton?.text ?? '確定',
             color: options?.confirmButton?.color ?? ButtonColor.Pink,
-            callback:
-              options?.confirmButton?.callback ??
-              (() => {
-                store.visible = false;
-                resolve(true);
-              }),
+            callback: () => {
+              if (options?.confirmButton?.callback)
+                options?.confirmButton?.callback();
+              store.visible = false;
+              resolve(true);
+            },
           },
         ],
       })
