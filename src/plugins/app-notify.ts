@@ -23,12 +23,11 @@ const alert = async ({
           {
             text: options?.button?.text ?? '關閉',
             color: options?.button?.color ?? ButtonColor.Gradient,
-            callback:
-              options?.button?.callback ??
-              (() => {
-                store.visible = false;
-                resolve(true);
-              }),
+            callback: () => {
+              if (options?.button?.callback) options?.button?.callback();
+              store.visible = false;
+              resolve(true);
+            },
           },
         ],
       })
