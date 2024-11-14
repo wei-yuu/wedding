@@ -31,8 +31,8 @@
             </div>
             <span class="text-3xl">成都雅宴時尚會館</span>
           </div>
-          <router-link :to="'/form'" class="mt-4">
-            <ui-button>點此報名</ui-button>
+          <router-link :to="'/message/wishes'" class="mt-4">
+            <ui-button>按下去給暐褕祝福</ui-button>
           </router-link>
         </div>
       </div>
