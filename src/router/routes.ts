@@ -30,6 +30,26 @@ const routes: RouteRecordRaw[] = [
         name: 'detail',
         component: async () => await import('@/pages/detail.vue'),
       },
+      {
+        path: 'seating',
+        name: 'seating',
+        component: async () => await import('@/pages/seating.vue'),
+      },
+    ],
+  },
+  {
+    path: '/message',
+    children: [
+      {
+        path: '',
+        name: 'message',
+        component: async () => await import('@/pages/message/index.vue'),
+      },
+      {
+        path: 'wishes',
+        name: 'wishes',
+        component: async () => await import('@/pages/message/wishes.vue'),
+      },
     ],
   },
 ];

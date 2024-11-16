@@ -13,7 +13,7 @@
     "noErrorTruncation": true,
     "resolveJsonModule": true,
     "composite": true,
-    "types": ["node"],
+    "types": ["node", "youtube"],
     "baseUrl": ".",
     "paths": {
       "@/*": ["src/*"]

@@ -5,7 +5,10 @@
     }"
   >
     <nav-bar />
-    <div class="max-h-[calc(100vh-124px)] overflow-y-scroll scroll-bar">
+    <div
+      id="container"
+      class="max-h-[calc(100vh-124px)] overflow-y-scroll scroll-bar"
+    >
       <router-view />
       <custom-footer />
     </div>
@@ -17,7 +20,7 @@ import router from '@/router';
 import { computed } from 'vue';
 
 const isHomePage = computed(() => {
-  return router.currentRoute.value.path === '/';
+  return router.currentRoute.value.name === 'home';
 });
 </script>
 

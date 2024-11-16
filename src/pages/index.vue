@@ -31,10 +31,8 @@
             </div>
             <span class="text-3xl">成都雅宴時尚會館</span>
           </div>
-          <router-link :to="'/form'" class="mt-4">
-            <button class="custom-btn btn-7">
-              <span class="text-2xl p-1">點此報名</span>
-            </button>
+          <router-link :to="'/message/wishes'" class="mt-4">
+            <ui-button>按下去給暐褕祝福</ui-button>
           </router-link>
         </div>
       </div>
@@ -52,34 +50,32 @@
           <img
             class="absolute z-10 left-4 top-6 max-md:z-0 max-md:shadow-lg max-md:w-[90%]"
             src="/public/images/index_Yura.jpg"
-            alt=""
+            alt="Yura"
           />
           <div
-            class="absolute top-0 w-60 h-52 bg-customGradient max-md:hidden"
-          ></div>
+            class="absolute top-0 w-60 h-52 bg-gradient-to-b from-blue/60 to-pink/60 max-md:hidden"
+          />
         </div>
         <div class="relative w-52">
           <img
             class="absolute z-10 left-4 top-6 max-md:z-0 max-md:shadow-lg max-md:w-[90%]"
             src="/public/images/index_Wilson.jpg"
-            alt=""
+            alt="Wilson"
           />
           <div
-            class="absolute top-0 w-60 h-52 bg-customGradient max-md:hidden"
-          ></div>
+            class="absolute top-0 w-60 h-52 bg-gradient-to-b from-blue/60 to-pink/60 max-md:hidden"
+          />
         </div>
       </div>
       <div class="w-4/5 text-2xl leading-10 max-md:px-2">
         <span
           >2021 年 5 月，Yura 剛剛轉職進入 Wilson
-          的公司。公司不久後舉辦了一場減重比賽，我們因為在同一組而有了更多的接觸。一起健身、互相鼓勵，我們在這段過程中漸漸發現彼此的默契和共同點。減重比賽期間的歡笑和努力不僅改變了我們的身體，還拉近了我們的心。隨著時間的推移，感情也在不知不覺中升溫。最終，我們於
+          的公司。公司不久後舉辦了一場減重比賽，我們因為在同一組而有了更多的接觸。一起健身、互相鼓勵，我們在這段過程中漸漸發現彼此的默契和共同點。減重比賽期間的歡笑和努力不僅改變了我們的體態，還拉近了我們的心。隨著時間的推移，感情也在不知不覺中升溫。最終，我們於
           2022 年 7 月開始正式交往，踏上了屬於我們的愛情旅程。</span
         >
       </div>
       <router-link :to="'/our-story'" class="mt-8">
-        <button class="custom-btn btn-7">
-          <span class="text-2xl p-1">更多的我們</span>
-        </button>
+        <ui-button>更多的我們</ui-button>
       </router-link>
     </div>
   </div>
