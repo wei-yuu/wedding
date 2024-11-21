@@ -63,7 +63,8 @@ const submit = async () => {
     .then(() => {
       appNotify.confirm({
         title: `感謝 ${name.value} 的留言`,
-        message: '我們有收到你的祝福囉～請再關注大螢幕 ☺️',
+        // message: '我們有收到你的祝福囉～請再關注大螢幕 ☺️',
+        message: '再留一則或去看看我們的故事更了解暐褕吧🤭',
         options: {
           cancelButton: {
             text: '還有話想說～',
@@ -73,12 +74,12 @@ const submit = async () => {
             },
           },
           confirmButton: {
-            text: '留完言了～',
+            text: '去看故事！',
             color: 'blue',
             callback: () => {
               name.value = '';
               message.value = '';
-              router.push('/');
+              router.push('/our-story');
             },
           },
         },
