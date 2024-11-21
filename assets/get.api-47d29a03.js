@@ -1,1 +1,0 @@
-import{i as t,a as r}from"./use-api-call-5ec4048c.js";const i=async({sheetId:e,range:s})=>await t.get(`https://sheets.googleapis.com/v4/spreadsheets/${e}/values/${s}`,{params:{key:r}}).then(({data:a})=>a.values);export{i as g};
