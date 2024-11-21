@@ -50,6 +50,11 @@ const routes: RouteRecordRaw[] = [
         name: 'wishes',
         component: async () => await import('@/pages/message/wishes.vue'),
       },
+      {
+        path: 'qrcode',
+        name: 'qrcode',
+        component: async () => await import('@/pages/message/qrcode.vue'),
+      },
     ],
   },
 ];
