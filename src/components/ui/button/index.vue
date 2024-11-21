@@ -75,7 +75,7 @@ const beforeClass = computed(() => {
 const afterClass = computed(() => {
   const after = [
     'after:absolute',
-    ' after:bottom-0',
+    'after:bottom-0',
     'after:right-0',
     'after:h-full',
     'after:w-full',
