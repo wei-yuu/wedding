@@ -57,6 +57,11 @@ const routes: RouteRecordRaw[] = [
       },
     ],
   },
+  {
+    path: '/drive',
+    name: 'drive',
+    component: async () => await import('@/pages/drive.vue'),
+  },
 ];
 
 export default routes;
