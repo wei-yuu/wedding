@@ -1,5 +1,5 @@
 <template>
-  <header class="flex items-center justify-center bg-white/10">
+  <header class="flex items-center justify-center" :class="[backgroundClass]">
     <nav class="flex w-[90%] items-center justify-between px-0 py-3">
       <router-link to="/">
         <div class="flex w-16 flex-wrap items-center justify-center">
@@ -67,6 +67,15 @@
 import router from '@/router';
 import type { Menu } from '@/types/components/nav-bar.type';
 import { computed, ref } from 'vue';
+
+withDefaults(
+  defineProps<{
+    backgroundClass?: string;
+  }>(),
+  {
+    backgroundClass: 'bg-white/10',
+  },
+);
 
 const showMenu = ref(false);
 

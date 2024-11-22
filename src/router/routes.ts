@@ -39,6 +39,7 @@ const routes: RouteRecordRaw[] = [
   },
   {
     path: '/message',
+    component: async () => await import('@/layout/message.vue'),
     children: [
       {
         path: '',
