@@ -7,7 +7,7 @@
       leaveToClass="opacity-0 translate-y-[-100%]"
     >
       <nav-bar
-        class="absolute top-0 w-full z-50"
+        class="absolute top-0 w-full z-20"
         v-if="showNavbar"
         background-class="bg-white/70"
       />
