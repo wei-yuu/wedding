@@ -17,7 +17,7 @@
         <!-- Header -->
         <div
           v-if="slots.header || title"
-          class="flex items-center h-[56px] py-1 pr-3 pl-5 font-medium text-gray-900 md:text-4xl text-2xl"
+          class="flex items-center gap-8 h-[56px] py-8 pr-3 pl-5 font-medium text-gray-900 md:text-4xl text-2xl"
           :class="[
             {
               'justify-between': !(
@@ -33,7 +33,7 @@
           <slot name="header-action" :close="close">
             <div
               v-if="showClose"
-              class="font-icon grid w-8 h-8 cursor-pointer place-items-center"
+              class="absolute right-12 font-icon text-xl cursor-pointer"
               @click="close"
             >
               close
