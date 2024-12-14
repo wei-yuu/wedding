@@ -2,7 +2,7 @@
   <div class="overflow-hidden">
     <transition
       enterActiveClass="transition-all ease-linear"
-      enterFromClass="translate-x-[100vw]"
+      enterFromClass="translate-x-[75vw]"
       enterToClass="translate-x-[-100%]"
       @afterEnter="visible = false"
       @beforeLeave="$emit('hide')"
@@ -12,7 +12,7 @@
     >
       <p
         v-if="visible"
-        class="font-yozai text-white text-4xl text-nowrap message inline-block"
+        class="font-yozai text-white text-4xl text-nowrap [text-shadow:_1px_1px_5px_black] inline-block"
       >
         {{ bullet.message }}
       </p>
@@ -50,13 +50,8 @@ watch(
   () => props.bullet,
   () => (visible.value = true),
 );
+
 onMounted(() => {
   visible.value = true;
 });
 </script>
-
-<style scoped lang="scss">
-.message {
-  text-shadow: 1px 1px 5px black;
-}
-</style>

@@ -91,8 +91,8 @@ const menus = ref<Menu[]>([
     show: false,
   },
   {
-    name: '婚禮座位表',
-    link: '/seating',
+    name: '留言板',
+    link: '/message',
     show: false,
   },
   {
