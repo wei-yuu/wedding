@@ -4,7 +4,7 @@
       class="relative w-[75vw] h-[90vh] bg-gray-300/30 rounded-xl [border-image:url('/board-border.png')_300_/_9%_7%_space] border-[20px]"
     >
       <template v-if="initFinish">
-        <youtube-player id="PLEROZ9PIiEwFLgV6pmglKtdJDM472YTjO" />
+        <!-- <youtube-player id="PLEROZ9PIiEwFLgV6pmglKtdJDM472YTjO" /> -->
         <bullet-background :model-value="backgrounds" />
         <div class="absolute top-0 h-full w-full">
           <bullet-screen :quantity="bulletQuantity" :magazine="messages" />
@@ -31,9 +31,9 @@ const bulletQuantity = ref(7);
 
 watch(
   () => messages,
-  () => {
+  async () => {
     if (messages.length < bulletQuantity.value + 1) {
-      void getShuffleMessage();
+      await getShuffleMessage();
     }
   },
   {
@@ -42,9 +42,9 @@ watch(
 );
 watch(
   () => backgrounds,
-  () => {
+  async () => {
     if (!backgrounds.length) {
-      void getShuffleBackground();
+      await getShuffleBackground();
     }
   },
   {
