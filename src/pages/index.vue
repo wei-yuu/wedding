@@ -13,23 +13,24 @@
           <span class="text-5xl">我們要結婚了！</span>
           <span class="text-3xl mt-4">Wilson ♡ Yura</span>
           <span class="text-2xl sm:text-3xl mt-4">
-            誠摯邀請您來參與我們的訂婚宴
+            誠摯邀請您來參與我們的結婚宴
           </span>
           <div class="my-10 px-44">
             <hr class="h-20 w-px border-0 border-black bg-black" />
           </div>
           <span class="text-5xl">
-            2024
+            2025
             <span class="mx-1">年</span>
-            11
+            01
             <span class="mx-1">月</span>
-            23<span class="mx-1">日</span>
+            21
+            <span class="mx-1">日</span>
           </span>
           <div class="flex mt-4">
             <div class="w-7">
               <img src="../../public/images/location.svg" alt="location" />
             </div>
-            <span class="text-3xl">成都雅宴時尚會館</span>
+            <span class="text-3xl">新郎家</span>
           </div>
           <router-link :to="'/message/wishes'" class="mt-4">
             <ui-button>按下去給暐褕祝福</ui-button>

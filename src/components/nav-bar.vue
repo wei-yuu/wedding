@@ -1,5 +1,5 @@
 <template>
-  <header class="flex items-center justify-center bg-white/10">
+  <header class="flex items-center justify-center" :class="[backgroundClass]">
     <nav class="flex w-[90%] items-center justify-between px-0 py-3">
       <router-link to="/">
         <div class="flex w-16 flex-wrap items-center justify-center">
@@ -12,7 +12,7 @@
           v-for="(menu, index) in menus"
           :key="index"
           :to="menu.link"
-          class="relative mx-2 flex items-center justify-center rounded px-6 py-3 text-3xl"
+          class="relative mx-2 flex items-center justify-center rounded px-6 py-3 text-3xl font-bold drop-shadow-[0px_0px_2px_white]"
           :class="{
             'bg-gradient-to-b from-blue-300/60 to-pink-300/60':
               menu.link === current,
@@ -45,7 +45,7 @@
               v-for="(menu, index) in menus"
               :key="index"
               :to="menu.link"
-              class="relative mx-2 px-6 py-3 flex justify-center text-4xl"
+              class="relative mx-2 px-6 py-3 flex justify-center text-4xl font-bold drop-shadow-[0px_0px_2px_white]"
               :class="{
                 'bg-gradient-to-b from-blue-300/60 to-pink-300/60':
                   menu.link === current,
@@ -68,6 +68,15 @@ import router from '@/router';
 import type { Menu } from '@/types/components/nav-bar.type';
 import { computed, ref } from 'vue';
 
+withDefaults(
+  defineProps<{
+    backgroundClass?: string;
+  }>(),
+  {
+    // backgroundClass: 'bg-white/10',
+  },
+);
+
 const showMenu = ref(false);
 
 const beforeClass =
@@ -82,8 +91,8 @@ const menus = ref<Menu[]>([
     show: false,
   },
   {
-    name: '婚禮座位表',
-    link: '/seating',
+    name: '留言板',
+    link: '/message',
     show: false,
   },
   {
