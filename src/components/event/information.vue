@@ -29,15 +29,15 @@ import { ref } from 'vue';
 const information = ref([
   {
     label: '日期：',
-    text: '11 月 23 日',
+    text: '01 月 21 日',
   },
   {
     label: '時間：',
-    text: '11:00 儀式\n12:30 準時開席',
+    text: '11:00 儀式\n12:00 準時開席',
   },
   {
     label: '地點：',
-    text: '成都雅宴',
+    text: '新郎家',
   },
 ]);
 </script>
