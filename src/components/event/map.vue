@@ -5,7 +5,7 @@
     >
       <iframe
         class="min-h-[250px] h-[90%] w-11/12 shadow-lg"
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3637.0319898435546!2d120.5658747753127!3d24.275613168410697!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3469137dd899aaf9%3A0xa0db76a95709900d!2z5oiQ6YO96ZuF5a605pmC5bCa5pyD6aSo!5e0!3m2!1szh-TW!2stw!4v1724147118904!5m2!1szh-TW!2stw"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d911.6267320710962!2d120.93476706958957!3d23.942508098658738!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3468d82e9e74da15%3A0xe07d7ebf4d86ab7!2zNTQ15Y2X5oqV57ij5Z-U6YeM6Y6u5qGD57Gz5be3MTPomZ8!5e0!3m2!1szh-TW!2stw!4v1736923435209!5m2!1szh-TW!2stw"
         style="border: 0"
         allowfullscreen="true"
         loading="lazy"
@@ -36,20 +36,16 @@ import { ref } from 'vue';
 
 const information = ref([
   {
-    label: '會館資訊',
-    text: '會館位於台中市清水區民享路117號。',
+    label: '地點資訊',
+    text: '南投縣埔里鎮桃米巷11號 (於地圖地標中左方黃色建築)',
   },
   {
     label: '開車前往',
-    text: '經由國道三號走沙鹿交流道。\n停車場入口位於會館後方。',
+    text: '經由國道六號走愛蘭交流道往日月潭方向。',
   },
   {
-    label: '搭乘火車',
-    text: '由清水車站轉乘 304 公車或計程車。',
-  },
-  {
-    label: '搭乘客運',
-    text: '由台中中港轉運站轉乘 304 公車或計程車。',
+    label: '搭乘火車(高鐵)',
+    text: '由台中火車站(台中高鐵站)轉乘往埔里國道客運，抵達埔里後轉搭計程車或租車前往。',
   },
 ]);
 </script>
