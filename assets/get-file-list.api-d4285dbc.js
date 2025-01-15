@@ -1,1 +1,0 @@
-import{i as a,a as i}from"./use-api-call-6df89e53.js";const r=async e=>await a.get("https://www.googleapis.com/drive/v3/files",{params:{key:i,q:`'${e}' in parents`}}).then(({data:t})=>t.files);export{r as g};
