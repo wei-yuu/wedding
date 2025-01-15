@@ -1,3 +1,4 @@
+import { useCheckDevice } from '@/composables/use-check-device';
 import type { RouteRecordRaw } from 'vue-router';
 
 const routes: RouteRecordRaw[] = [
@@ -45,6 +46,9 @@ const routes: RouteRecordRaw[] = [
         path: '',
         name: 'message',
         component: async () => await import('@/pages/message/index.vue'),
+        beforeEnter: () => {
+          if (useCheckDevice().isMobile()) return '/message/wishes';
+        },
       },
       {
         path: 'wishes',
