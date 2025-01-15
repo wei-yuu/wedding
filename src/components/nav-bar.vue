@@ -12,7 +12,7 @@
           v-for="(menu, index) in menus"
           :key="index"
           :to="menu.link"
-          class="relative mx-2 flex items-center justify-center rounded px-6 py-3 text-3xl"
+          class="relative mx-2 flex items-center justify-center rounded px-6 py-3 text-3xl font-bold drop-shadow-[0px_0px_2px_white]"
           :class="{
             'bg-gradient-to-b from-blue-300/60 to-pink-300/60':
               menu.link === current,
@@ -45,7 +45,7 @@
               v-for="(menu, index) in menus"
               :key="index"
               :to="menu.link"
-              class="relative mx-2 px-6 py-3 flex justify-center text-4xl"
+              class="relative mx-2 px-6 py-3 flex justify-center text-4xl font-bold drop-shadow-[0px_0px_2px_white]"
               :class="{
                 'bg-gradient-to-b from-blue-300/60 to-pink-300/60':
                   menu.link === current,
@@ -73,7 +73,7 @@ withDefaults(
     backgroundClass?: string;
   }>(),
   {
-    backgroundClass: 'bg-white/10',
+    // backgroundClass: 'bg-white/10',
   },
 );
 
