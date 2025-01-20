@@ -40,8 +40,8 @@ const duration = computed(() => {
     if (props.bullet.message.length > 40)
       return Math.floor(Math.random() * 5 + 30) * 1000;
     if (props.bullet.message.length > 20)
-      return Math.floor(Math.random() * 10 + 15) * 1000;
-    return Math.floor(Math.random() * 5 + 10) * 1000;
+      return Math.floor(Math.random() * 10 + 20) * 1000;
+    return Math.floor(Math.random() * 5 + 15) * 1000;
   }
   return 0;
 });
