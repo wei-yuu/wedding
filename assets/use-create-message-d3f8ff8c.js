@@ -1,0 +1,1 @@
+import{i as e,u as t}from"./use-api-call-ddfcfe57.js";const p=async({name:s,message:a})=>{await e.post("https://script.google.com/macros/s/AKfycbzfw21WAg_9QL-Q1iupDBS2MU-MkQQapUQQpBZeNYThXD-4RQIT2SUtWVGCg3xIAFnd/exec",JSON.stringify({name:s,message:a}))},n=()=>t(async({name:s,message:a})=>await p({name:s,message:a}));export{n as u};
